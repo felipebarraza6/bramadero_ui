@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer, useEffect, createContext } from 'react'
 
-function App() {
+import { reducer } from './reducers/Auth.js'
+
+import AuthLayout from "./layouts/Auth/Auth.js"
+import AdminLayout from "./layouts/Admin/Admin.js"
+
+export const AuthContext = createContext()
+
+
+function App(props) {
+
+  const initialState = {
+    isAuthenticated: false,
+    access_token: null,
+    user: null
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+
+    const access_token = JSON.parse(localStorage.getItem('access_token') || null)
+    const user = JSON.parse(localStorage.getItem('user') || null)
+
+    if(user && access_token){
+      dispatch({
+        type: 'LOGIN',
+        payload: {
+          access_token,
+          user
+        }
+      })
+    }
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <AuthContext.Provider
+      value={{
+        state,
+        dispatch
+      }}
+    >
+      <div className="App" style={{backgroundColor:'#030852'}}>
+        {!state.isAuthenticated ? 
+          <AuthLayout {...props} /> : <AdminLayout {...props} />
+        }
+      </div>
+
+    </AuthContext.Provider>
+
+  )
+
 }
 
-export default App;
+export default App
