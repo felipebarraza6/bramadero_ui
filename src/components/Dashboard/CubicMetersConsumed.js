@@ -48,6 +48,7 @@ const CubicMetersConsumed = () => {
                   
                 })
               setData(data => [...data, x.value])
+              return x
             }) 
             return request.result          
         } catch(err) {
