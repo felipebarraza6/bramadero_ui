@@ -19,15 +19,15 @@ let chart_1_2_3_options = {
   scales: {
     yAxes: [
       {
-        barPercentage: 1.6,
+        barPercentage: 2.6,
         gridLines: {
-          drawBorder: false,
+          drawBorder: true,
           color: "rgba(29,140,248,0.0)",
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 0,
-          suggestedMax: 6,
+          suggestedMin: 2052713,
+          suggestedMax: 2052713,
           padding: 20,
           fontColor: "#9a9a9a",
         },
@@ -37,7 +37,7 @@ let chart_1_2_3_options = {
       {
         barPercentage: 1.6,
         gridLines: {
-          drawBorder: false,
+          drawBorder: true,
           color: "rgba(29,140,248,0.1)",
           zeroLineColor: "transparent",
         },

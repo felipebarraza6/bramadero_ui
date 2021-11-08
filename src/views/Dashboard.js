@@ -11,7 +11,12 @@ import {
   Col
 } from "reactstrap";
 
+import { Statistic } from 'antd';
+
 import CubicMetersConsumed from "../components/Dashboard/CubicMetersConsumed"
+
+const { Countdown } = Statistic;
+const deadline = Date.now() + 0 * 60 * 60 * 24 * 2 + 1000 * 30; 
 
 const Dashboard = () => {
   
@@ -70,8 +75,7 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Tiempo para sincronización</p>
-                      <p className="card-category">En desarrollo...</p>
-                      <CardTitle tag="h3">00:00:00</CardTitle>
+                      <Countdown valueStyle={{color: 'white'}} value={deadline} format="mm:ss:SSS" onFinish={()=> window.location.reload()} />
                     </div>
                   </Col>
                 </Row>

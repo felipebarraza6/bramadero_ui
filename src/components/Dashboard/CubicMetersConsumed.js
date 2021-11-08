@@ -132,14 +132,15 @@ const CubicMetersConsumed = () => {
         </Row>
       </CardHeader>
       <CardBody>
-        <div className="chart-area">                      
+        <div className="chart-area">                     
+        {console.log(data)}
           <Line
             data={{      
               labels: labels,
               datasets: [
                 {
                   label: "M3",
-                  fill: true,          
+                  fill: false,          
                   borderColor: "#1f8ef1",
                   borderWidth: 2,
                   borderDash: [],
@@ -147,7 +148,7 @@ const CubicMetersConsumed = () => {
                   pointBackgroundColor: "#1f8ef1",
                   pointBorderColor: "rgba(255,255,255,0)",
                   pointHoverBackgroundColor: "#1f8ef1",
-                  pointBorderWidth: 20,
+                  pointBorderWidth: 0,
                   pointHoverRadius: 4,
                   pointHoverBorderWidth: 15,
                   pointRadius: 6,
