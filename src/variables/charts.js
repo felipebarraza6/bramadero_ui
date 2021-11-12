@@ -26,8 +26,8 @@ let chart_1_2_3_options = {
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 2052713,
-          suggestedMax: 2052713,
+          suggestedMin: 2126000,
+          suggestedMax: 2128000,
           padding: 20,
           fontColor: "#9a9a9a",
         },

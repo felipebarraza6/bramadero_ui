@@ -37,7 +37,7 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Nivel de Pozo(metros)</p>
-                      <CardTitle tag="h3">5.4</CardTitle>
+                      <CardTitle tag="h3">12.46</CardTitle>
                     </div>
                   </Col>
                 </Row>
@@ -56,7 +56,7 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Nivel de estanque(litros))</p>
-                      <CardTitle tag="h3">3.16</CardTitle>
+                      <CardTitle tag="h3">2.3</CardTitle>
                     </div>
                   </Col>
                 </Row>
@@ -75,7 +75,10 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Tiempo para sincronización</p>
-                      <Countdown valueStyle={{color: 'white'}} value={deadline} format="mm:ss:SSS" onFinish={()=> window.location.reload()} />
+                      <Countdown valueStyle={{color: 'white'}} value={deadline} format="mm:ss:SSS" onFinish={()=> {
+                        window.location.reload()
+                      }
+                      } />
                     </div>
                   </Col>
                 </Row>

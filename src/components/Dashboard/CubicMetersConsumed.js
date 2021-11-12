@@ -38,7 +38,7 @@ const CubicMetersConsumed = () => {
         try {
             const request = await api_novus.data('3grecdi1va')            
             var results = request.result
-            setDataChart(results)                                                 
+            setDataChart(results)                                                         
             results.map((x) => {
                 setLabels((label) => {
                   if(Array.isArray(label)){                                      
@@ -132,8 +132,7 @@ const CubicMetersConsumed = () => {
         </Row>
       </CardHeader>
       <CardBody>
-        <div className="chart-area">                     
-        {console.log(data)}
+        <div className="chart-area">                             
           <Line
             data={{      
               labels: labels,
