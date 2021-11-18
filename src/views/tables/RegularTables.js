@@ -43,8 +43,8 @@ const RegularTables = () => {
                   tbody={[
                     {
                       data: [
-                        { text: "Damian Huanque" },
-                        { text: "comiteelcardal@gmail.com" },
+                        { text: "Isabel Albornoz" },
+                        { text: "comite.ap.bramadero@gmail.com" },
                         { text: "+56 9 4131 8204" },
                       ],
                      },

@@ -35,24 +35,28 @@ const CubicMetersConsumed = () => {
     }
 
     const getData = async()=> {
-        try {
-            const request = await api_novus.data('3grecdi1va')            
-            var results = request.result
-            setDataChart(results)                                                         
-            results.map((x) => {
-                setLabels((label) => {
-                  if(Array.isArray(label)){                                      
-                    return [...label, x.metadata.CREATED_AT.slice(0,10)]                                                                                   
-                    
-                }
-                  
+        try {            
+            for(var i=1; i < 7; i++){
+              var datenow = new Date()               
+              datenow.setDate()
+              var str_datenow = `${datenow.getFullYear()}-${datenow.getMonth()+1}-${datenow.getDay()}`
+              var transform = str_datenow.toString()
+              console.log(transform)
+                const rq1 = await api_novus.data('3grecdi1va', 
+                  transform, 
+                  transform
+                )            
+                var results = rq1.result
+                setDataChart(results)
+                // eslint-disable-next-line no-loop-func
+                setLabels((label) => {                  
+                      return [...label, results[0].time.slice(0,10)]
                 })
-              setData(data => [...data, x.value])
-              return x
-            }) 
-            return request.result          
+                // eslint-disable-next-line no-loop-func
+                setData(data => [...data, results[0].value])                                               
+            }                      
         } catch(err) {
-            console.log(err)
+            console.log({err})
         }        
     }
 
@@ -61,7 +65,6 @@ const CubicMetersConsumed = () => {
     }, [])
     
     
-
     return(<Col xs="12">
     <Card className="card-chart">
       <CardHeader>
@@ -69,65 +72,6 @@ const CubicMetersConsumed = () => {
           <Col className="text-left" sm="6">
             <h5 className="card-category">Medida en metros cubicos</h5>
             <CardTitle tag="h2">Metros cúbicos consumidos(m3)</CardTitle>
-          </Col>
-          <Col sm="6">
-            <ButtonGroup
-              className="btn-group-toggle float-right"
-              data-toggle="buttons"
-            >
-              <i style={{marginRight:'10px', marginTop:'6px'}}>Registros filtrados hace: </i>
-              <Button
-                color="info"
-                id="0"
-                size="sm"
-                tag="label"
-                className={classNames("btn-simple", {
-                  active: bigChartData === "data1",
-                })}
-                onClick={() => setBgChartData("data1")}
-              >
-                <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                  Semana 1
-                </span>
-                <span className="d-block d-sm-none">
-                  S1
-                </span>
-              </Button>
-              <Button
-                color="info"
-                id="1"
-                size="sm"
-                tag="label"
-                className={classNames("btn-simple", {
-                  active: bigChartData === "data2",
-                })}
-                onClick={() => setBgChartData("data2")}
-              >
-                <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                  Semana 2
-                </span>
-                <span className="d-block d-sm-none">
-                  S2
-                </span>
-              </Button>
-              <Button
-                color="info"
-                id="2"
-                size="sm"
-                tag="label"
-                className={classNames("btn-simple", {
-                  active: bigChartData === "data3",
-                })}
-                onClick={() => setBgChartData("data3")}
-              >
-                <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                  Semana 3
-                </span>
-                <span className="d-block d-sm-none">
-                  S3
-                </span>
-              </Button>
-            </ButtonGroup>
           </Col>
         </Row>
       </CardHeader>
