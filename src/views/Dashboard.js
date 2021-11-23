@@ -30,7 +30,10 @@ const Dashboard = () => {
           const rqPond = await api_novus.lastData('3grecuc2v')
           setWell(rqWell.data.result[0].value)
           setPond(rqPond.data.result[0].value)
-          return rqWell
+          return {
+            rqWell, 
+            rqPond
+          }
       }
     get()
   }, [])

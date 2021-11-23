@@ -27,7 +27,7 @@ let chart_1_2_3_options = {
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 2128000,
+          suggestedMax: 60000,
           padding: 20,
           fontColor: "#9a9a9a",
         },

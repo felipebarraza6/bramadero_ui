@@ -23,37 +23,36 @@ import {
 
 const CubicMetersConsumed = () => {
 
-    const [dataChart, setDataChart] = useState([])        
-
-    const [bigChartData, setbigChartData] = React.useState("data1")
     const [labels, setLabels] = useState([])
     const [data, setData] = useState([])
     
 
-    const setBgChartData = (name) => {
-        setbigChartData(name)
-    }
 
     const getData = async()=> {
         try {            
-            for(var i=1; i < 7; i++){
-              var datenow = new Date()               
-              datenow.setDate()
-              var str_datenow = `${datenow.getFullYear()}-${datenow.getMonth()+1}-${datenow.getDay()}`
-              var transform = str_datenow.toString()
-              console.log(transform)
-                const rq1 = await api_novus.data('3grecdi1va', 
-                  transform, 
-                  transform
-                )            
-                var results = rq1.result
-                setDataChart(results)
+            for(var i=0; i < 7; i++){
+              var start_datenow = new Date()                       
+              var demo_date = new Date ()
+              start_datenow.setDate(start_datenow.getDate()-i)
+              const rq1 = await api_novus.data('3grecdi1va', 
+                `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`,
+                `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`
+              )            
+              var results = rq1.result
+             
+              // eslint-disable-next-line no-loop-func
+              console.log(rq1) 
+              if(results.length > 0){
                 // eslint-disable-next-line no-loop-func
-                setLabels((label) => {                  
-                      return [...label, results[0].time.slice(0,10)]
-                })
+                setLabels(label =>{                
+                
+                  return [...label, results[0].time.slice(0, 10)];                
+              })                            
                 // eslint-disable-next-line no-loop-func
-                setData(data => [...data, results[0].value])                                               
+                setData(data => {                  
+                    return [...data, results[0].value]                
+                })               
+              }                                            
             }                      
         } catch(err) {
             console.log({err})
