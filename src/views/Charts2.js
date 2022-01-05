@@ -18,7 +18,7 @@ const Charts2 = () => {
                 <h5 className="card-category">Dia maximo de consumo del mes</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
-                  EN PROCESAMIENTO...
+                  CARGANDO DATOS...
                 </CardTitle>
               </CardHeader>
             </Card>
@@ -30,8 +30,7 @@ const Charts2 = () => {
                 <h5 className="card-category">Cantidad de estanques llenados las ultimas 24 hrs</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
-                  EN PROCESAMIENTO...
-                </CardTitle>
+                  CARGANDO DATOS...                </CardTitle>
               </CardHeader>
             </Card>
           </Col>
