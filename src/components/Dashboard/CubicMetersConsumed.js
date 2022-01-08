@@ -29,8 +29,10 @@ const CubicMetersConsumed = () => {
 
 
     const getData = async()=> {
+      var data_v = []
         try {            
             for(var i=0; i < 7; i++){
+              console.log(data[i])
               var start_datenow = new Date()                       
               var demo_date = new Date ()
               start_datenow.setDate(start_datenow.getDate()-i)
@@ -49,8 +51,8 @@ const CubicMetersConsumed = () => {
                   return [...label, results[0].time.slice(0, 10)];                
               })                            
                 // eslint-disable-next-line no-loop-func
-                setData(data => {                  
-                    return [...data, results[0].value]                
+                setData(data => {                                         
+                    return [...data, parseFloat(results[0].value / 1000).toFixed(2)]                
                 })               
               }                                            
             }                      
