@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import classNames from "classnames";
 // react plugin used to create charts
 import { Line } from "react-chartjs-2";
 import api_novus from '../../api_novus/endpoints'
 // reactstrap components
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardHeader,
   CardBody,
@@ -25,9 +22,7 @@ const CubicMetersConsumed = () => {
 
     const [labels, setLabels] = useState([])
     const [data, setData] = useState([])
-    
-
-
+   
     const getData = async()=> {
       var data_v = []
         try {            
