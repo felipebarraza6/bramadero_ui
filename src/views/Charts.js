@@ -30,7 +30,7 @@ const Charts = () => {
   return (
     <>
       <div className="content">
-        <h2 className="text-center" style={{color: "white"}} >Nivel de pozo & Nivel de caudal</h2>      
+        <h2 className="text-center" style={{color: "white"}} >Flujo & Nivel de caudal</h2>      
         <div style={{marginBottom:'0px'}}>
 
         </div>
@@ -41,7 +41,7 @@ const Charts = () => {
                 <h5 className="card-category">PROMEDIO EN METROS</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
-                  Nivel de pozo
+                  Flujo
                 </CardTitle>
               </CardHeader>
               <CardBody>

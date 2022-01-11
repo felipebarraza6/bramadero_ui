@@ -55,7 +55,7 @@ const Dashboard = () => {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Nivel de Pozo(metros)</p>
+                      <p className="card-category">Flujo (lt/sa)</p>
                       <CardTitle tag="h3"> {well} </CardTitle>
                     </div>
                   </Col>
@@ -74,7 +74,7 @@ const Dashboard = () => {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Nivel de estanque(litros))</p>
+                      <p className="card-category">Nivel freático (mcH2O)</p>
                       <CardTitle tag="h3"> {pond} </CardTitle>
                     </div>
                   </Col>

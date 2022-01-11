@@ -52,7 +52,7 @@ const CubicMetersConsumed = () => {
               })                            
                 // eslint-disable-next-line no-loop-func
                 setData(data => {                                         
-                    return [...data, parseFloat(results[0].value / 1000).toFixed(2)]                
+                    return [...data, parseFloat(results[0].value / 10).toFixed(2)]                
                 })               
               }                                            
             }                      
@@ -72,7 +72,7 @@ const CubicMetersConsumed = () => {
         <Row>
           <Col className="text-left" sm="6">
             <h5 className="card-category">Medida en metros cubicos</h5>
-            <CardTitle tag="h2">Metros cúbicos consumidos(m3)</CardTitle>
+            <CardTitle tag="h2">Volumen acumulado (m3)</CardTitle>
           </Col>
         </Row>
       </CardHeader>

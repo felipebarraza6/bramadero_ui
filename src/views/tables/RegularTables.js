@@ -24,9 +24,9 @@ const RegularTables = () => {
                   tbody={[
                     {
                       data: [
-                        { text: "Isabel Albornoz" },
-                        { text: "comite.ap.bramadero@gmail.com" },
-                        { text: "+56 9 4131 8204" },
+                        { text: "" },
+                        { text: "" },
+                        { text: "" },
                       ],
                      },
                                                           
