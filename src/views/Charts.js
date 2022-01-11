@@ -30,15 +30,14 @@ const Charts = () => {
   return (
     <>
       <div className="content">
-        <h2 className="text-center" style={{color: "white"}} >Flujo & Nivel de caudal</h2>      
+        <h2 className="text-center" style={{color: "white"}} >Flujo & Nivel freático</h2>      
         <div style={{marginBottom:'0px'}}>
 
         </div>
         <Row className="mt-5">
           <Col className="ml-auto" md="5">
             <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">PROMEDIO EN METROS</h5>
+              <CardHeader>                
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
                   Flujo
@@ -56,10 +55,9 @@ const Charts = () => {
           </Col>
           <Col className="mr-auto" md="5">
             <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">PROMEDIO EN LITROS</h5>
+              <CardHeader>                
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-chart-bar-32 text-info" /> Nivel de estanque
+                  <i className="tim-icons icon-chart-bar-32 text-info" /> Nivel freático
                 </CardTitle>
               </CardHeader>
               <CardBody>
