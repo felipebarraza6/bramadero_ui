@@ -139,7 +139,7 @@ const Charts = () => {
           <Card className="card-chart">
       <CardHeader>
         <Row>
-          <Col className="text-left" sm="6">            
+          <Col className="text-left" sm="12">            
             <CardTitle tag="h2">Nivel freático (McH2O)</CardTitle>
           </Col>
         </Row>
