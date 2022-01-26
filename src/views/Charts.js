@@ -10,7 +10,8 @@ import api_novus from '../api_novus/endpoints'
 import {
   chartExample5,
   chartExample6,
-  chart_1_2_3_options  
+  chart_1_2_3_options,
+  chart_mode
 } from "../variables/charts.js";
 
 const Charts = () => {
@@ -24,7 +25,7 @@ const Charts = () => {
   const getDataFl = async()=> {
     var data_v = []
       try {            
-          for(var i=0; i < 7; i++){            
+          for(var i=0; i < 30; i++){            
             var start_datenow = new Date()                       
             var demo_date = new Date ()
             start_datenow.setDate(start_datenow.getDate()-i)
@@ -55,7 +56,7 @@ const Charts = () => {
   const getDataPw = async()=> {
     var data_v = []
       try {            
-          for(var i=0; i < 7; i++){            
+          for(var i=0; i < 30; i++){            
             var start_datenow = new Date()                       
             var demo_date = new Date ()
             start_datenow.setDate(start_datenow.getDate()-i)
@@ -92,11 +93,7 @@ const Charts = () => {
     <>
       <div className="content">
         <h2 className="text-center" style={{color: "white"}} >Flujo & Nivel freático</h2>      
-        <div style={{marginBottom:'0px'}}>
-
-        </div>
         <Row className="mt-5">
-          <Col className="ml-auto" md="5">
           <Card className="card-chart">
       <CardHeader>
         <Row>
@@ -129,13 +126,11 @@ const Charts = () => {
                 },
               ],
             }}
-            options={chart_1_2_3_options}
+            options={chart_mode}
           />
         </div>
       </CardBody>
     </Card>          
-          </Col>
-          <Col className="mr-auto" md="5">
           <Card className="card-chart">
       <CardHeader>
         <Row>
@@ -168,12 +163,11 @@ const Charts = () => {
                 },
               ],
             }}
-            options={chart_1_2_3_options}
+            options={chart_mode}
           />
         </div>
       </CardBody>
     </Card>            
-          </Col>
         </Row>        
       </div>
     </>

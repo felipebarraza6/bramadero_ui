@@ -1,5 +1,55 @@
 
 
+let chart_mode = {
+  maintainAspectRatio: false,
+  legend: {
+    display: false,
+  },
+  tooltips: {
+    backgroundColor: "#f5f5f5",
+    titleFontColor: "#333",
+    bodyFontColor: "#666",
+    bodySpacing: 40,
+    xPadding: 12,
+    mode: "nearest",
+    intersect: 0,
+    position: "nearest",
+  },
+  responsive: true,
+  scales: {
+    yAxes: [
+      {
+        barPercentage: 2.6,
+        gridLines: {
+          drawBorder: true,
+          color: "rgba(29,140,248,0.0)",
+          zeroLineColor: "transparent",
+        },
+        ticks: {
+          suggestedMin: 1,
+          suggestedMax: 5,
+          padding: 20,
+          fontColor: "#9a9a9a",
+        },
+      },
+    ],
+    xAxes: [
+      {
+        barPercentage: 1.6,
+        gridLines: {
+          drawBorder: true,
+          color: "rgba(29,140,248,0.1)",
+          zeroLineColor: "transparent",
+        },
+        ticks: {
+          padding: 20,
+          fontColor: "#9a9a9a",
+        },
+      },
+    ],
+  },
+}
+
 let chart_1_2_3_options = {
   maintainAspectRatio: false,
   legend: {
@@ -839,4 +889,5 @@ module.exports = {
   chartExample8, // in src/views/Charts.js
   chartExample9, // in src/views/Charts.js
   chartExample10, // in src/views/Charts.js
+  chart_mode
 };

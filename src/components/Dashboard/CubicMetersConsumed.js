@@ -75,7 +75,7 @@ const CubicMetersConsumed = () => {
         <div className="chart-area">                             
           <Line
             data={{      
-              labels: labels,
+              labels: labels.reverse(),
               datasets: [
                 {
                   label: "M3",
@@ -91,7 +91,7 @@ const CubicMetersConsumed = () => {
                   pointHoverRadius: 4,
                   pointHoverBorderWidth: 15,
                   pointRadius: 6,
-                  data: data,
+                  data: data.reverse(),
                 },
               ],
             }}

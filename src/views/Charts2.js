@@ -16,7 +16,7 @@ const Charts2 = () => {
     const getData = async()=> {
       var data_v = []
         try {            
-            for(var i=0; i < 7; i++){              
+            for(var i=0; i < 30; i++){              
               var start_datenow = new Date()                       
               var demo_date = new Date ()
               start_datenow.setDate(start_datenow.getDate()-i)
@@ -73,7 +73,7 @@ const Charts2 = () => {
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
                   {data.length > 1 && <>
-                  {data[0].time.slice(0,10)} / {parseInt(data[0].value/1000).toFixed(2)}
+                  {data[0].time.slice(0,10)} / {parseInt(data[0].value/1000).toFixed(2)} (m3)
                   </>
                 }
                 </CardTitle>
@@ -97,7 +97,7 @@ const Charts2 = () => {
               <CardHeader>                
                 <h5 className="card-category">Recuperacion de pozo</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-chart-bar-32 text-info" /> 0 Seg (en desarrollo)
+                  <i className="tim-icons icon-chart-bar-32 text-info" /> 9 - 10 min
                 </CardTitle>
               </CardHeader>              
             </Card>
