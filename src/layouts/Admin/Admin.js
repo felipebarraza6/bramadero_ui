@@ -185,6 +185,7 @@ const Admin = (props) => {
         }}
         closeSidebar={closeSidebar}
       />
+      
       <div className="main-panel" ref={mainPanelRef} data={activeColor}>
         <AdminNavbar
           {...props}
@@ -192,9 +193,10 @@ const Admin = (props) => {
           brandText={getActiveRoute(routes)}
           sidebarOpened={sidebarOpened}
           toggleSidebar={toggleSidebar}
-        />
+        />        
         <Switch>
           {getRoutes(routes)}
+          
           <Redirect from="*" to="/admin/dashboard" />
         </Switch>
         {
@@ -203,7 +205,9 @@ const Admin = (props) => {
             <Footer fluid />
           )
         }
+        
       </div>
+      
       <FixedPlugin
         activeColor={activeColor}
         sidebarMini={sidebarMini}

@@ -1,14 +1,20 @@
-
+/*!
+=========================================================
+* Black Dashboard PRO React - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/black-dashboard-pro-react
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+* Coded by Creative Tim
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
 import React from "react";
 
-//import { CustomInput } from "reactstrap";
+import { CustomInput } from "reactstrap";
 
 const FixedPlugin = (props) => {
-  /*
   const [classes, setClasses] = React.useState("dropdown");
-  
   const [darkMode, setDarkMode] = React.useState(false);
-  
   const handleClick = () => {
     if (classes === "dropdown") {
       setClasses("dropdown show");
@@ -20,19 +26,21 @@ const FixedPlugin = (props) => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("white-content");
   };
-
-  
-    <a
+  return (
+    <div className="fixed-plugin">
+      <div className={classes}>
+        <a
+          style={{color:'white'}}
           href="#pablo"
           onClick={(e) => {
             e.preventDefault();
             handleClick();
           }}
         >
-          <i className="fa fa-cog fa-2x" />
+          <i className="tim-icons icon-puzzle-10" style={{fontSize:'20px'}} />
         </a>
         <ul className="dropdown-menu show">
-          <li className="header-title">CONFIGURACION</li>
+          <li className="header-title">SIDEBAR COLOR</li>
           <li className="adjustments-line">
             <div className="badge-colors text-center">
               <span
@@ -118,18 +126,11 @@ const FixedPlugin = (props) => {
               />
               <span className="label-switch ml-n3">DARK MODE</span>
             </div>
-          </li>          
-          <li className="button-container">           
           </li>
+          
+         
         </ul>
-        <div className={classes}>
-        
       </div>
-  */
-
-  return (
-    <div className="fixed-plugin">
-      
     </div>
   );
 };

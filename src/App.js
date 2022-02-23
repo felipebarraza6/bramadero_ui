@@ -19,6 +19,7 @@ function App(props) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
+    document.body.classList.toggle("white-content");
 
     const access_token = JSON.parse(localStorage.getItem('access_token') || null)
     const user = JSON.parse(localStorage.getItem('user') || null)

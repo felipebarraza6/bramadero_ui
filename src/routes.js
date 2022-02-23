@@ -3,13 +3,20 @@ import RegularTables from "./views/tables/RegularTables.js";
 import Charts from "./views/Charts.js";
 import Charts2 from "./views/Charts2.js";
 import Dashboard from "./views/Dashboard.js";
+import MiPozo from "./views/MiPozo.js";
 
 
 const routes = [
   {
+    path: "/mipozo",
+    name: "MI POZO",
+    icon: "tim-icons icon-compass-05",
+    component: MiPozo,
+    layout: "/admin",
+  },
+  {
     path: "/dashboard",
-    name: "INICIO",
-    rtlName: "لوحة القيادة",
+    name: "DASHBOARD",
     icon: "tim-icons icon-components",
     component: Dashboard,
     layout: "/admin",

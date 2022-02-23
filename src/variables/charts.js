@@ -578,14 +578,15 @@ const chartExample6 = {
       ],
       xAxes: [
         {
-          barPercentage: 1.6,
+          barPercentage: 2.6,          
           gridLines: {
             drawBorder: false,
+            drawOnArea: false,
             color: "rgba(29,140,248,0.1)",
             zeroLineColor: "transparent",
           },
           ticks: {
-            padding: 20,
+            padding: 1,
             fontColor: "#9e9e9e",
           },
         },
@@ -647,7 +648,8 @@ const chartExample7 = {
           ticks: {
             suggestedMin: 60,
             suggestedMax: 125,
-            padding: 20,
+            padding: 1,
+            stepSize:40,
             fontColor: "#9e9e9e",
           },
         },
@@ -660,8 +662,11 @@ const chartExample7 = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            padding: 20,
+            padding: 40,
             fontColor: "#9e9e9e",
+            
+              stepSize: 20
+            
           },
         },
       ],
@@ -673,30 +678,19 @@ const chartExample7 = {
 // #########################################
 const chartExample8 = {
   data: {
-    labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+    labels: ["NIVEL FREATICO"],
     datasets: [
       {
-        label: "Data",
-        fill: true,
-        backgroundColor: "#ff8a76",
-        hoverBackgroundColor: " #ff8a76",
-        borderColor: "#ff8a76",
-        borderWidth: 2,
-        borderDash: [],
+        label: "Metros",
+        fill: false,
+        backgroundColor: "#3C91E6",
+        hoverBackgroundColor: " #3C91E6",
+        borderColor: "#3C91E6",
+        borderWidth: 0,
+        borderDash: [0],
         borderDashOffset: 0.0,
-        data: [80, 100, 70, 80, 120, 80, 130],
-      },
-      {
-        label: "Data",
-        fill: true,
-        backgroundColor: "#2782f0",
-        hoverBackgroundColor: " #2782f0",
-        borderColor: "#2782f0",
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        data: [60, 110, 90, 70, 90, 100],
-      },
+        data: [20.2],
+      }     
     ],
   },
   options: {
@@ -724,23 +718,25 @@ const chartExample8 = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
-            padding: 20,
-            fontColor: "#9e9e9e",
+            suggestedMin: 0,
+            suggestedMax: 40,
+            padding: 0,
+            fontSize:14,
+            fontColor: "#0050b3",
+            stepSize: 40,
           },
         },
       ],
       xAxes: [
         {
           gridLines: {
-            drawBorder: false,
-            color: "rgba(29,140,248,0.1)",
+            drawBorder: false,            
             zeroLineColor: "transparent",
           },
           ticks: {
-            padding: 20,
-            fontColor: "#9e9e9e",
+            padding: 0,
+            fontColor: "#0050b3",
+            fontSize: 15,
           },
         },
       ],

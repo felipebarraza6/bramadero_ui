@@ -58,8 +58,10 @@ const AdminNavbar = (props) => {
         })}
         expand="lg"
       >
+        
         <Container fluid>
           <div className="navbar-wrapper">
+          
             <div className="navbar-minimize d-inline">
               <Button
                 className="minimize-sidebar btn-just-icon"
@@ -112,6 +114,10 @@ const AdminNavbar = (props) => {
           </button>
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
+            <UncontrolledDropdown nav style={{marginTop:'10px'}}>
+                  
+              </UncontrolledDropdown>
+             
               <UncontrolledDropdown nav style={{marginTop:'10px'}}>
                   <div>
                     <Button>
@@ -130,9 +136,12 @@ const AdminNavbar = (props) => {
               </UncontrolledDropdown>
               <li className="separator d-lg-none" />
             </Nav>
-          </Collapse>
+          </Collapse>          
+          
         </Container>
       </Navbar>
+      
+     
      
     </>
   );

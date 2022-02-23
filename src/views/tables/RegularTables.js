@@ -24,9 +24,9 @@ const RegularTables = () => {
                   tbody={[
                     {
                       data: [
-                        { text: "" },
-                        { text: "" },
-                        { text: "" },
+                        { text: "Pedro Perez" },
+                        { text: "Presidente" },
+                        { text: "+56 9 93750561" },
                       ],
                      },
                                                           

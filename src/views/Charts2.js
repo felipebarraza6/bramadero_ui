@@ -87,7 +87,7 @@ const Charts2 = () => {
                 <h5 className="card-category">Cantidad de estanques llenados las ultimas 24 hrs</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
-                  {values.length > 1 ? '4':'5' }              </CardTitle>
+                  0             </CardTitle>
               </CardHeader>
             </Card>
           </Col>
@@ -97,7 +97,7 @@ const Charts2 = () => {
               <CardHeader>                
                 <h5 className="card-category">Recuperacion de pozo</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-chart-bar-32 text-info" /> 9 - 10 min
+                 0 min
                 </CardTitle>
               </CardHeader>              
             </Card>
