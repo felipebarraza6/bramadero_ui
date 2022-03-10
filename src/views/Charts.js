@@ -24,12 +24,13 @@ const Charts = () => {
 
   const getDataFl = async()=> {
     var data_v = []
+    var start_datenowi = new Date()
       try {            
-          for(var i=0; i < 30; i++){            
+          for(var i=0; i < start_datenowi.getDate(); i++){            
             var start_datenow = new Date()                       
             var demo_date = new Date ()
             start_datenow.setDate(start_datenow.getDate()-i)
-            const rq1 = await api_novus.data('3grecuc1v', 
+            const rq1 = await api_novus.data('3grecdi1va', 
               `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`,
               `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`
             )            
@@ -55,8 +56,9 @@ const Charts = () => {
 
   const getDataPw = async()=> {
     var data_v = []
+    var start_datenowi = new Date()
       try {            
-          for(var i=0; i < 30; i++){            
+          for(var i=0; i < start_datenowi.getDate(); i++){            
             var start_datenow = new Date()                       
             var demo_date = new Date ()
             start_datenow.setDate(start_datenow.getDate()-i)
@@ -92,7 +94,7 @@ const Charts = () => {
   return (
     <>
       <div className="content">
-        <h2 className="text-center" style={{color: "white"}} >Flujo & Nivel freático</h2>      
+        <h2 className="text-center" style={{color: "gray"}} >Flujo & Nivel freático</h2>      
         <Row className="mt-5">
           <Card className="card-chart">
       <CardHeader>

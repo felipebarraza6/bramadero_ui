@@ -61,17 +61,17 @@ const Charts2 = () => {
     
   return (
     <>
-      <div className="content">
-        <h2 className="text-center" style={{color: 'white'}} >Analisis de datos</h2>      
+      <div className="content" style={{marginTop:'100px'}}>
+        <h2 className="text-center" style={{color: 'gray'}} >Analisis de datos</h2>      
         <div style={{marginBottom:'0px'}}>        
         </div>
-        <Row className="mt-5">
-          <Col className="ml-auto" md="4">
+        <Row className="mt-5" >
+          <Col className="ml-auto" md="12">
             <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">Dia maximo de consumo del mes</h5>
-                <CardTitle tag="h3">
-                  <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
+              <CardHeader style={{backgroundColor:'#1d8cf8', color:'white'}}>
+                <h5 className="card-category" style={{color:'white'}}>Dia maximo de consumo del mes</h5>
+                <CardTitle tag="h3" style={{color:'white'}}>
+                  <i style={{color:'white'}} className="tim-icons icon-chart-bar-32 text-primary" />{" "}
                   {data.length > 1 && <>
                   {data[0].time.slice(0,10)} / {parseInt(data[0].value/1000).toFixed(2)} (m3)
                   </>
@@ -80,24 +80,14 @@ const Charts2 = () => {
               </CardHeader>
             </Card>
           </Col>
+          
 
-          <Col className="ml-auto" md="4">
-            <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">Cantidad de estanques llenados las ultimas 24 hrs</h5>
-                <CardTitle tag="h3">
-                  <i className="tim-icons icon-chart-bar-32 text-primary" />{" "}
-                  0             </CardTitle>
-              </CardHeader>
-            </Card>
-          </Col>
-
-          <Col className="ml-auto" md="4">
-            <Card className="card-chart">
-              <CardHeader>                
-                <h5 className="card-category">Recuperacion de pozo</h5>
-                <CardTitle tag="h3">
-                 0 min
+          <Col className="ml-auto" md="12">
+            <Card className="card-chart" style={{color:'white'}}>
+              <CardHeader style={{backgroundColor:'#1d8cf8', color:'white'}}>
+                <h5 style={{color:'white'}} className="card-category">Recuperacion de pozo</h5>
+                <CardTitle tag="h3" style={{color:'white'}}>
+                 0 min - EN PROCESAMIENTO*
                 </CardTitle>
               </CardHeader>              
             </Card>
