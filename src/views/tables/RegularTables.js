@@ -24,9 +24,9 @@ const RegularTables = () => {
                   tbody={[
                     {
                       data: [
-                        { text: "Pedro Perez" },
-                        { text: "Presidente" },
-                        { text: "+56 9 93750561" },
+                        { text: "Constanza Hidd" },
+                        { text: "constanza.hidd@iansa.cl" },
+                        { text: "+56 9 9886 2975" },
                       ],
                      },
                                                           

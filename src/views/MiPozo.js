@@ -101,7 +101,7 @@ const MiPozo = () => {
                                 borderWidth: 0,
                                 borderDash: [0],
                                 borderDashOffset: 0.0,
-                                data: [pond+14.0],
+                                data: [pond+97.0],
                               }     
                             ],
                           }}
@@ -114,23 +114,23 @@ const MiPozo = () => {
                       <table style={styles.table}>
                           <tr >
                             <th style={styles.table.tdth}>Profundidad de pozo</th>
-                            <td style={styles.table.tdth}>40 mtrs</td>                            
+                            <td style={styles.table.tdth}>170 mtrs</td>                            
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de bomba</th>
-                            <td style={styles.table.tdth}>28 mtrs</td>
+                            <td style={styles.table.tdth}>79.4 mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de sensor(freatico)</th>
-                            <td style={styles.table.tdth}>26 mtrs</td>
+                            <td style={styles.table.tdth}>73 mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro ducto de salida(bomba)</th>
-                            <td style={styles.table.tdth}>3”</td>
+                            <td style={styles.table.tdth}>8”</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro flujometro</th>
-                            <td style={styles.table.tdth}>3”</td>
+                            <td style={styles.table.tdth}>8”</td>
                           </tr>
                          
                         </table>
