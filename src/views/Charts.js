@@ -23,9 +23,11 @@ const Charts = () => {
   const [data2, setData2] = useState([])
 
   const getDataFl = async()=> {
-    var data_v = []
+    
     var start_datenowi = new Date()
       try {            
+          let list_d = []
+          let rest = []
           for(var i=0; i < start_datenowi.getDate(); i++){            
             var start_datenow = new Date()                       
             var demo_date = new Date ()
@@ -44,11 +46,20 @@ const Charts = () => {
                 return [...label, results[0].time.slice(0, 10)];                
             })                            
               // eslint-disable-next-line no-loop-func
-              setData1(data => {                                         
-                  return [...data1, parseFloat(results[0].value / 10).toFixed(2)]                
-              })               
-            }                                            
-          }                      
+              
+              list_d.push(parseFloat(results[0].value / 10).toFixed(2))                         
+             
+            }               
+          }  
+          for(var i =0; i < list_d.length; i++){
+              var proc = list_d[i]-list_d[i+1]
+              if(!isNaN(proc)){
+                rest.push(proc.toFixed(2)) 
+              }              
+          }
+          console.log(rest) 
+          setData1(rest)
+          
       } catch(err) {
           console.log({err})
       }        
@@ -77,7 +88,7 @@ const Charts = () => {
             })                            
               // eslint-disable-next-line no-loop-func
               setData2(data => {                                         
-                  return [...data2, parseFloat(results[0].value / 10).toFixed(2)]                
+                  return [...data2, parseFloat(results[0].value)]                
               })               
             }                                            
           }                      
