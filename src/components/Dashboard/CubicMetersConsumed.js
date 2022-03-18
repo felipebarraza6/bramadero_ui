@@ -24,10 +24,10 @@ const CubicMetersConsumed = () => {
     const [data, setData] = useState([])
    
     const getData = async()=> {
-      var data_v = []
+      var data_l = []
+      var data_d = []
         try {            
-            for(var i=0; i < 7; i++){
-              console.log(data[i])
+            for(var i=0; i < 7; i++){              
               var start_datenow = new Date()                       
               var demo_date = new Date ()
               start_datenow.setDate(start_datenow.getDate()-i)
@@ -35,22 +35,21 @@ const CubicMetersConsumed = () => {
                 `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`,
                 `${start_datenow.getFullYear()}-${start_datenow.getMonth()+1}-${start_datenow.getDate()}`
               )            
-              var results = rq1.result
-             
-              // eslint-disable-next-line no-loop-func
-              console.log(rq1) 
+              var results = rq1.result            
+              // eslint-disable-next-line no-loop-func              
               if(results.length > 0){
                 // eslint-disable-next-line no-loop-func
                 setLabels(label =>{                
-                
-                  return [...label, results[0].time.slice(0, 10)];                
+                  data_l.push(results[0].time.slice(0, 10))
               })                            
                 // eslint-disable-next-line no-loop-func
-                setData(data => {                                         
-                    return [...data, parseFloat(results[0].value / 10).toFixed(2)]                
+                setData(data => {     
+                  data_d.push(parseFloat(results[0].value / 10).toFixed(2))
                 })               
               }                                            
             }                      
+            setLabels(data_l)
+            setData(data_d)
         } catch(err) {
             console.log({err})
         }        
@@ -72,10 +71,11 @@ const CubicMetersConsumed = () => {
         </Row>
       </CardHeader>
       <CardBody>
-        <div className="chart-area">                             
+        <div className="chart-area">  
+        {labels && 
           <Line
             data={{      
-              labels: labels.reverse(),
+              labels: labels,
               datasets: [
                 {
                   label: "M3",
@@ -91,12 +91,12 @@ const CubicMetersConsumed = () => {
                   pointHoverRadius: 4,
                   pointHoverBorderWidth: 15,
                   pointRadius: 6,
-                  data: data.reverse(),
+                  data: data
                 },
               ],
             }}
             options={chart_1_2_3_options}
-          />
+          />}
         </div>
       </CardBody>
     </Card>

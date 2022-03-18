@@ -19,15 +19,15 @@ let chart_mode = {
   scales: {
     yAxes: [
       {
-        barPercentage: 2.6,
+        barPercentage: 4.0,
         gridLines: {
           drawBorder: true,
           color: "rgba(29,140,248,0.0)",
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 1,
-          suggestedMax: 5,
+          suggestedMin: 24,
+          suggestedMax: 12,
           padding: 20,
           fontColor: "#9a9a9a",
         },
@@ -76,8 +76,8 @@ let chart_1_2_3_options = {
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 1,
-          suggestedMax: 20,
+          suggestedMin: 19000,
+          suggestedMax: 1,
           padding: 20,
           fontColor: "#9a9a9a",
         },
@@ -719,11 +719,11 @@ const chartExample8 = {
           },
           ticks: {
             suggestedMin: 0,
-            suggestedMax: 170,
+            suggestedMax: 50,
             padding: 0,
             fontSize:14,
             fontColor: "#0050b3",
-            stepSize: 170,
+            stepSize: 50,
           },
         },
       ],

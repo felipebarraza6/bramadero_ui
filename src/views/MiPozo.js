@@ -81,7 +81,7 @@ const MiPozo = () => {
                   </Col>
                   <Col lg="3">
                       <div style={{border:'2px solid gray', marginTop:'-50px',marginLeft:'-30px', padding:'10px',width:'200px'}}>
-                          <span style={{color:'gray'}}>Acumulador: {acc/1000} (m3)</span>
+                          <span style={{color:'gray'}}>Acumulador: {acc/100} (m3)</span>
                           <img style={{marginTop: '0px'}} width={300}  src='https://smarthydro.cl/wp/wp-content/uploads/2021/01/logo-sin-tagline_Mesa-de-trabajo-1.png' />
                       </div>
                   </Col>
@@ -101,7 +101,7 @@ const MiPozo = () => {
                                 borderWidth: 0,
                                 borderDash: [0],
                                 borderDashOffset: 0.0,
-                                data: [pond+97.0],
+                                data: [pond+17.0],
                               }     
                             ],
                           }}
@@ -114,23 +114,23 @@ const MiPozo = () => {
                       <table style={styles.table}>
                           <tr >
                             <th style={styles.table.tdth}>Profundidad de pozo</th>
-                            <td style={styles.table.tdth}>170 mtrs</td>                            
+                            <td style={styles.table.tdth}>50 mtrs</td>                            
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de bomba</th>
-                            <td style={styles.table.tdth}>79.4 mtrs</td>
+                            <td style={styles.table.tdth}>36 mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de sensor(freatico)</th>
-                            <td style={styles.table.tdth}>73 mtrs</td>
+                            <td style={styles.table.tdth}>33 mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro ducto de salida(bomba)</th>
-                            <td style={styles.table.tdth}>8”</td>
+                            <td style={styles.table.tdth}>4”</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro flujometro</th>
-                            <td style={styles.table.tdth}>8”</td>
+                            <td style={styles.table.tdth}>4”</td>
                           </tr>
                          
                         </table>

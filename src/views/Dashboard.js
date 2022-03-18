@@ -28,8 +28,13 @@ const Dashboard = () => {
       const get = async() => {
           const rqWell = await api_novus.lastData('3grecuc1v')
           const rqPond = await api_novus.lastData('3grecuc2v')
+          if(rqPond.data.result[0].value === 3276.7){
+            setPond(50) 
+          }else {
+            setPond(rqPond.data.result[0].value)
+          }
           setWell(rqWell.data.result[0].value)
-          setPond(rqPond.data.result[0].value)
+          
           return {
             rqWell, 
             rqPond
@@ -94,7 +99,7 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Tiempo para sincronización</p>
-                      <Countdown valueStyle={{color: 'white'}} value={deadline} format="mm:ss:SSS" onFinish={()=> {
+                      <Countdown valueStyle={{color: 'gray'}} value={deadline} format="mm:ss:SSS" onFinish={()=> {
                         window.location.reload()
                       }
                       } />

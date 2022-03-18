@@ -6,7 +6,7 @@ import api_novus from '../api_novus/endpoints'
 
 const Charts2 = () => {
 
-  const [labels, setLabels] = useState([])
+    const [labels, setLabels] = useState([])
     const [data, setData] = useState([])
     const [values, setValues]= useState([])
     const [viewstr, setViewStr]=useState('')
@@ -35,7 +35,6 @@ const Charts2 = () => {
              
               // eslint-disable-next-line no-loop-func              
               if(results.length > 0){
-                
                 // eslint-disable-next-line no-loop-func
                 list_d.push({
                   date: results[0].time.slice(0, 10),
@@ -69,9 +68,6 @@ const Charts2 = () => {
           }))
 
           setValueMax(maxObj)
-
-
- 
           //setData1(rest)                            
         } catch(err) {
             console.log({err})
@@ -80,55 +76,98 @@ const Charts2 = () => {
 
     useEffect(() => {
         getData() 
-         
         
     }, [])
-    if(values.length > 6){    
-      console.log(values)
-      console.log(Math.max(...values)  )
-      
-    }
-    
+        
     
   return (
     <>
-      <div className="content" style={{marginTop:'100px'}}>
-        <h2 className="text-center" style={{color: 'gray'}} >Analisis de datos</h2>      
+      <div className="content" style={{marginTop:'0px'}}>
+        <h2 className="text-center" style={{color: 'gray'}} >ANÁLISIS DE DATOS</h2>      
         <div style={{marginBottom:'0px'}}>        
         </div>
         <Row className="mt-5" >
-          <Col className="ml-auto" md="6">
+          <Col className="ml-auto" md="4">
             <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#1d8cf8', color:'white'}}>                                
-                <CardBody>
-                <h1 style={{color:'white'}}>Dia maximo de consumo del mes</h1>
-                <div style={{margin:'77px'}}>
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Promedio de consumo diario</h2>
                   {valueMax ? <>
-                    <center><h2 style={{ color:'white'}}>{valueMax.value}(m3)</h2></center>
-                    <center><h2 style={{margin:'0', color:'white'}}>{valueMax.date}</h2></center>
+                    <center><h2 style={{ color:'white'}}>{valueMax.value}(m3) - {valueMax.date}</h2></center>                    
                   </>: <center><h2 style={{ color:'white'}}>CARGANDO DATOS...</h2></center>}
-                  
-                  </div>
                 </CardBody>
               </CardHeader>
             </Card>
-          </Col>
-          
-
-          <Col className="ml-auto" md="6">
+          </Col>          
+          <Col className="ml-auto" md="4">
             <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#1d8cf8', color:'white'}}>                                                                
-                <CardBody>
-                  <h1 style={{color:'white'}}>Tiempo de recuperacion del pozo</h1>
-                  <center><h2 style={{margin:'100px', color:'white'}}>00:00:00 / tiempo</h2></center>
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Bomba pozo profundo</h2>
+                <h3 style={{color:'white'}}>Mantenimiento: X días</h3>
+                <h3 style={{color:'white'}}>Cambio: X días</h3>
+                 
                 </CardBody>
               </CardHeader>
             </Card>
-          </Col>
+          </Col>    
+          <Col className="ml-auto" md="4">
+            <Card className="card-chart">
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Cantidad de estanques llenados (últimas 24 horas)</h2>
+                 
+                </CardBody>
+              </CardHeader>
+            </Card>
+          </Col>    
+          <Col className="ml-auto" md="4">
+            <Card className="card-chart">
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Perdidas de facturación</h2>
+                <h3 style={{color:'white'}}>0000 m3</h3>                  
+                </CardBody>
+              </CardHeader>
+            </Card>
+          </Col>    
+          <Col className="ml-auto" md="4">
+            <Card className="card-chart">
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Recuperación de pozo</h2>
+                <h3 style={{color:'white'}}>0000 seg</h3>
+                </CardBody>
+              </CardHeader>
+            </Card>
+          </Col>    
+          <Col className="ml-auto" md="4">
+            <Card className="card-chart">
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h2 style={{color:'white'}}>Factibididad de nuevos arranques</h2>
+                <h3 style={{color:'white'}}>#### casas</h3> 
+                </CardBody>
+              </CardHeader>
+            </Card>
+          </Col>                              
         </Row>        
       </div>
     </>
   );
 };
+
+const styles = {
+  table: {
+    borderCollapse: 'collapse',
+    width: '100%',    
+    tdth: {
+      border: '1px solid #dddddd',
+      textAlign: 'left',
+      padding: '8px'
+    }
+        
+   }
+}
 
 export default Charts2;
