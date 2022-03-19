@@ -6,6 +6,7 @@ import {
     CardTitle,
     Row,
     Col,
+    Button,
     CardHeader,
     
   } from "reactstrap";
@@ -50,6 +51,13 @@ const MiPozo = () => {
     return( <>
         <div className="content">
           <Row>         
+            <Col>
+              <Button>El Camaron</Button>
+              <Button>La Tuna</Button>
+              <Button>Lo Moscoso</Button>
+              <Button>Manantiales</Button>
+              <Button>San Jose</Button>
+            </Col>
             <Col xs="12">
               <Card className="card-chart">
                 <CardHeader style={{marginBottom:'90px'}}>
