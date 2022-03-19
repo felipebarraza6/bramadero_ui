@@ -97,7 +97,7 @@ const AdminNavbar = (props) => {
               </button>
             </div>
             <NavbarBrand onClick={(e) => e.preventDefault()}>
-              CENTTRAL DE MONITOREO            
+              CENTRAL DE MONITOREO            
             </NavbarBrand>
           </div>
           <button

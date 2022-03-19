@@ -93,7 +93,7 @@ const Charts2 = () => {
                 <CardBody style={{margin:'30px', color:'white'}}>                               
                 <h3 style={{color:'white'}}>Promedio de consumo diario</h3>
                   {valueMax ? <>
-                    <center><h4 style={{ color:'white'}}>{valueMax.value}(m3) - {valueMax.date}</h4></center>                    
+                    <center><h4 style={{ color:'white'}}>{valueMax.value}(m3)</h4></center>                    
                   </>: <center><h4 style={{ color:'white'}}>CARGANDO DATOS...</h4></center>}
                 </CardBody>
               </CardHeader>

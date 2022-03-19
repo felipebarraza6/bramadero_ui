@@ -168,8 +168,8 @@ const styles = {
     backgroundColor: '#5e72e4',
     border:'10px solid #5e72e4',
     marginTop:'-5px',
-    marginLeft: '-60px',
-    width:'40px'  
+    marginLeft: '-50px',
+    width:'80px'  
   },
   diagonal: {    
       borderTop:'4px solid gray',
