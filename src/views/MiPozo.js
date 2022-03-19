@@ -81,7 +81,7 @@ const MiPozo = () => {
                   </Col>
                   <Col lg="3">
                       <div style={{border:'2px solid gray', marginTop:'-50px',marginLeft:'-30px', padding:'10px',width:'200px'}}>
-                          <span style={{color:'gray'}}>Acumulador: {acc/100} (m3)</span>
+                          <span style={{color:'gray'}}>Acumulador: {acc/10} (m3)</span>
                           <img style={{marginTop: '0px'}} width={300}  src='https://smarthydro.cl/wp/wp-content/uploads/2021/01/logo-sin-tagline_Mesa-de-trabajo-1.png' />
                       </div>
                   </Col>

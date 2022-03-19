@@ -87,66 +87,66 @@ const Charts2 = () => {
         <div style={{marginBottom:'0px'}}>        
         </div>
         <Row className="mt-5" >
-          <Col className="ml-auto" md="4">
+          <Col className="ml-center" md="5">
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Promedio de consumo diario</h2>
+                <h3 style={{color:'white'}}>Promedio de consumo diario</h3>
                   {valueMax ? <>
-                    <center><h2 style={{ color:'white'}}>{valueMax.value}(m3) - {valueMax.date}</h2></center>                    
-                  </>: <center><h2 style={{ color:'white'}}>CARGANDO DATOS...</h2></center>}
+                    <center><h4 style={{ color:'white'}}>{valueMax.value}(m3) - {valueMax.date}</h4></center>                    
+                  </>: <center><h4 style={{ color:'white'}}>CARGANDO DATOS...</h4></center>}
                 </CardBody>
               </CardHeader>
             </Card>
           </Col>          
-          <Col className="ml-auto" md="4">
+          <Col className="ml-center" md="5">
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Bomba pozo profundo</h2>
-                <h3 style={{color:'white'}}>Mantenimiento: X días</h3>
-                <h3 style={{color:'white'}}>Cambio: X días</h3>
+                <h3 style={{color:'white'}}>Bomba pozo profundo</h3>
+                <h4 style={{color:'white'}}>Mantenimiento: X días / Cambio: X días</h4>                
+                </CardBody>
+              </CardHeader>
+            </Card>
+          </Col>    
+          </Row>
+          <Row className="mt-5" >
+          <Col className="ml-center" md="5">
+            <Card className="card-chart">
+              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
+                <CardBody style={{margin:'30px', color:'white'}}>                               
+                <h3 style={{color:'white'}}>Cantidad de estanques llenados (últimas 24 horas)</h3>
                  
                 </CardBody>
               </CardHeader>
             </Card>
           </Col>    
-          <Col className="ml-auto" md="4">
+          <Col className="ml-center" md="5">
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Cantidad de estanques llenados (últimas 24 horas)</h2>
-                 
+                <h3 style={{color:'white'}}>Perdidas de facturación</h3>
+                <h4 style={{color:'white'}}>0000 m3</h4>                  
                 </CardBody>
               </CardHeader>
             </Card>
           </Col>    
-          <Col className="ml-auto" md="4">
+          <Col className="ml-center" md="5">
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Perdidas de facturación</h2>
-                <h3 style={{color:'white'}}>0000 m3</h3>                  
+                <h3 style={{color:'white'}}>Recuperación de pozo</h3>
+                <h4 style={{color:'white'}}>0000 seg</h4>
                 </CardBody>
               </CardHeader>
             </Card>
           </Col>    
-          <Col className="ml-auto" md="4">
+          <Col className="ml-center" md="5">
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Recuperación de pozo</h2>
-                <h3 style={{color:'white'}}>0000 seg</h3>
-                </CardBody>
-              </CardHeader>
-            </Card>
-          </Col>    
-          <Col className="ml-auto" md="4">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h2 style={{color:'white'}}>Factibididad de nuevos arranques</h2>
-                <h3 style={{color:'white'}}>#### casas</h3> 
+                <h3 style={{color:'white'}}>Factibididad de nuevos arranques</h3>
+                <h4 style={{color:'white'}}>#### casas</h4> 
                 </CardBody>
               </CardHeader>
             </Card>

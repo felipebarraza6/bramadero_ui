@@ -80,7 +80,7 @@ const Dashboard = () => {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Nivel freático (mcH2O)</p>
-                      <CardTitle tag="h3"> {pond} </CardTitle>
+                      <CardTitle tag="h3"> {pond + 17.0} </CardTitle>
                     </div>
                   </Col>
                 </Row>

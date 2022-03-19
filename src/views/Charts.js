@@ -210,31 +210,29 @@ const Charts = () => {
       <Col className="text-left" sm="6" style={{padding:'10px'}}>
         <table style={styles.table}>          
           <tr style={styles.table.tdth}>
-            <td></td>
             <th style={styles.table.tdth}> 03-18</th>
-            <th style={styles.table.tdth}>  03-17</th>
+            <th style={styles.table.tdth}> 03-17</th>
             <th style={styles.table.tdth}> 03-16</th>
             <th style={styles.table.tdth}> 03-15</th>
             <th style={styles.table.tdth}> 03-14</th>
             <th style={styles.table.tdth}> 03-13</th>
           </tr>
           <tr>
-            <td style={styles.table.tdth}> MAX</td>
-            <td style={styles.table.tdth}> 28.7</td>
-            <td style={styles.table.tdth}> 28.8</td>
-            <td style={styles.table.tdth}> 28.8</td>
-            <td style={styles.table.tdth}> 28.8</td>
-            <td style={styles.table.tdth}> 28.8</td>
-            <td style={styles.table.tdth}> 28.8</td>
+            
+            <td style={styles.table.tdthb}> 28.7</td>
+            <td style={styles.table.tdthb}> 28.8</td>
+            <td style={styles.table.tdthb}> 28.8</td>
+            <td style={styles.table.tdthb}> 28.8</td>
+            <td style={styles.table.tdthb}> 28.8</td>
+            <td style={styles.table.tdthb}> 28.8</td>
           </tr>          
           <tr>
-          <td style={styles.table.tdth}>MIN</td>
-            <td style={styles.table.tdth}>25.6</td>
-            <td style={styles.table.tdth}>25.6</td>
-            <td style={styles.table.tdth}>25.6</td>
-            <td style={styles.table.tdth}>25.6</td>
-            <td style={styles.table.tdth}> 25.6</td>
-            <td style={styles.table.tdth}>25.6</td>
+            <td style={styles.table.tdthr}>25.6</td>
+            <td style={styles.table.tdthr}>25.6</td>
+            <td style={styles.table.tdthr}>25.6</td>
+            <td style={styles.table.tdthr}>25.6</td>
+            <td style={styles.table.tdthr}> 25.6</td>
+            <td style={styles.table.tdthr}>25.6</td>
           </tr>
           
         </table>
@@ -255,6 +253,18 @@ const styles = {
       border: '1px solid #dddddd',
       textAlign: 'left',
       padding: '8px'
+    },
+    tdthr: {
+      border: '1px solid #dddddd',
+      textAlign: 'left',
+      padding: '8px',
+      color: 'red'
+    },
+    tdthb: {
+      border: '1px solid #dddddd',
+      textAlign: 'left',
+      padding: '8px',
+      color: '#1890ff'
     }
         
    }

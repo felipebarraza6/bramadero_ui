@@ -6,8 +6,12 @@ import SortingTable from "../../components/SortingTable/SortingTable.js"
 const RegularTables = () => {
   return (
     <>
-      <div className="content">
-      <h2 className="text-center" style={{color: 'white'}} >Reportes</h2>  
+      <div className="content" style={{marginBottom:'30px'}}>
+      <h2 className="text-center" 
+        style={{
+          color: 'gray', 
+          marginBottom:'80px', 
+          paddingTop:'40'}}> Reportes</h2>  
         <Row>
           <Col className="mb-5" md="12">
             <Card>
