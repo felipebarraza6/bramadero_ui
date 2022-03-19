@@ -153,7 +153,7 @@ const styles = {
     border:'10px solid #5e72e4',
     marginTop:'-5px',
     marginLeft: '-60px',
-    width:'230px'  
+    width:'200px'  
   },
   line2: {
     color: 'white',
@@ -161,11 +161,11 @@ const styles = {
     border:'10px solid #5e72e4',
     marginTop:'-5px',
     marginLeft: '-60px',
-    width:'108px'  
+    width:'80px'  
   },
   diagonal: {    
       borderTop:'4px solid gray',
-      width:'257px',
+      width:'57px',
       transform: 'rotate(-12.5deg)',
       transformOrigin: '0% 0%',
       marginTop: '50px'  
