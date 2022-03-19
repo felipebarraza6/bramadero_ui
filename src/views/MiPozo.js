@@ -169,7 +169,7 @@ const styles = {
     border:'10px solid #5e72e4',
     marginTop:'-5px',
     marginLeft: '-60px',
-    width:'80px'  
+    width:'40px'  
   },
   diagonal: {    
       borderTop:'4px solid gray',
