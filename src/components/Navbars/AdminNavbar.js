@@ -52,6 +52,7 @@ const AdminNavbar = (props) => {
 
   return (
     <>
+    
       <Navbar
         className={classNames("navbar-absolute", {
           [color]: props.location.pathname.indexOf("full-screen-map") === -1,
@@ -114,10 +115,7 @@ const AdminNavbar = (props) => {
           </button>
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
-            <UncontrolledDropdown nav style={{marginTop:'10px'}}>
-                  
-              </UncontrolledDropdown>
-             
+                                          
               <UncontrolledDropdown nav style={{marginTop:'10px'}}>
                   <div>
                     <Button>
@@ -137,6 +135,7 @@ const AdminNavbar = (props) => {
               <li className="separator d-lg-none" />
             </Nav>
           </Collapse>          
+          
           
         </Container>
       </Navbar>
