@@ -31,6 +31,8 @@ const MiPozo = () => {
   const [pond, setPond] = useState(0)
   const [acc, setAcc] = useState(0)
 
+  const data_estatic = JSON.parse(localStorage.getItem('data_p') || null)
+
   useEffect(() => {
     const get = async() => {
         const rqWell = await api_novus.lastData('3grecuc1v')
@@ -52,11 +54,61 @@ const MiPozo = () => {
         <div className="content">
           <Row>         
             <Col>
-              <Button>El Camaron</Button>
-              <Button>La Tuna</Button>
-              <Button>Lo Moscoso</Button>
-              <Button>Manantiales</Button>
-              <Button>San Jose</Button>
+              <Button onClick={()=> {
+                localStorage.setItem('token_novus', '51ef5b36-0690-4592-89b0-a7aa40e04a17')
+                localStorage.setItem("data_p", JSON.stringify({
+                  "d1": 50,
+                  "d2": 33,
+                  "d3": 36,
+                  "d4": 4,
+                  "d5":4
+                }))
+                window.location.reload()
+              }}>El Camaron</Button>
+              <Button onClick={()=> {
+                localStorage.setItem('token_novus', '40cef8c3-482c-46f7-a54a-a4f6d80921d5')
+                localStorage.setItem("data_p", JSON.stringify({
+                  "d1": 48,
+                  "d2": 13,
+                  "d3": 0,
+                  "d4": 4,
+                  "d5":4
+                }))
+                window.location.reload()
+              }} >La Tuna</Button>
+              <Button onClick={()=> {
+                localStorage.setItem('token_novus', '32ae0a00-7374-46e8-bc5c-e085714748d7')
+                localStorage.setItem("data_p", JSON.stringify({
+                  "d1": 82,
+                  "d2": 20,
+                  "d3": 24,
+                  "d4": 4,
+                  "d5":4
+                }))
+                window.location.reload()
+              }} >Lo Moscoso</Button>
+              <Button onClick={()=> {
+                localStorage.setItem('token_novus', '9d1162a7-7088-4dc8-9b19-d666acc051b1')
+                localStorage.setItem("data_p", JSON.stringify({
+                  "d1": 50,
+                  "d2": 33,
+                  "d3": 36,
+                  "d4": 4,
+                  "d5":4
+                })) 
+                window.location.reload()
+              }} >Manantiales</Button>
+              <Button onClick={()=> {
+                localStorage.setItem('token_novus', '867f9225-24f2-487d-bf28-c2ccd0e662bc')
+                localStorage.setItem("data_p", JSON.stringify({
+                  "d1": 50,
+                  "d2": 33,
+                  "d3": 36,
+                  "d4": 4,
+                  "d5":4
+                }))
+                window.location.reload()
+              }} >San Jose</Button>
             </Col>
             <Col xs="12">
               <Card className="card-chart">
@@ -109,7 +161,7 @@ const MiPozo = () => {
                                 borderWidth: 0,
                                 borderDash: [0],
                                 borderDashOffset: 0.0,
-                                data: [pond+17.0],
+                                data: [pond+(data_estatic.d1-data_estatic.d2)],
                               }     
                             ],
                           }}
@@ -122,23 +174,23 @@ const MiPozo = () => {
                       <table style={styles.table}>
                           <tr >
                             <th style={styles.table.tdth}>Profundidad de pozo</th>
-                            <td style={styles.table.tdth}>50 mtrs</td>                            
+                            <td style={styles.table.tdth}>{data_estatic.d1} mtrs</td>                            
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de bomba</th>
-                            <td style={styles.table.tdth}>36 mtrs</td>
+                            <td style={styles.table.tdth}>{data_estatic.d3} mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Posicionamiento de sensor(freatico)</th>
-                            <td style={styles.table.tdth}>33 mtrs</td>
+                            <td style={styles.table.tdth}>{data_estatic.d2} mtrs</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro ducto de salida(bomba)</th>
-                            <td style={styles.table.tdth}>4”</td>
+                            <td style={styles.table.tdth}>{data_estatic.d4}”</td>
                           </tr>
                           <tr>
                             <th style={styles.table.tdth}>Diámetro flujometro</th>
-                            <td style={styles.table.tdth}>4”</td>
+                            <td style={styles.table.tdth}>{data_estatic.d5}”</td>
                           </tr>
                          
                         </table>
