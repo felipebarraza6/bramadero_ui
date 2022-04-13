@@ -61,7 +61,8 @@ const MiPozo = () => {
                   "d2": 33,
                   "d3": 36,
                   "d4": 4,
-                  "d5":4
+                  "d5":4,
+                  "d6": 15
                 }))
                 window.location.reload()
               }}>El Camaron</Button>
@@ -72,7 +73,8 @@ const MiPozo = () => {
                   "d2": 13,
                   "d3": 0,
                   "d4": 4,
-                  "d5":4
+                  "d5":4,
+                  "d6":30
                 }))
                 window.location.reload()
               }} >La Tuna</Button>
@@ -83,7 +85,8 @@ const MiPozo = () => {
                   "d2": 20,
                   "d3": 24,
                   "d4": 4,
-                  "d5":4
+                  "d5":4,
+                  "d6":30
                 }))
                 window.location.reload()
               }} >Lo Moscoso</Button>
@@ -94,7 +97,8 @@ const MiPozo = () => {
                   "d2": 33,
                   "d3": 36,
                   "d4": 4,
-                  "d5":4
+                  "d5":4,
+                  "d6":40
                 })) 
                 window.location.reload()
               }} >Manantiales</Button>
@@ -105,7 +109,8 @@ const MiPozo = () => {
                   "d2": 33,
                   "d3": 36,
                   "d4": 4,
-                  "d5":4
+                  "d5":4,
+                  "d6":100
                 }))
                 window.location.reload()
               }} >San Jose</Button>

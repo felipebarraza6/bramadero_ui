@@ -12,6 +12,7 @@ const Charts2 = () => {
     const [viewstr, setViewStr]=useState('')
     const [valueMax, setValueMax]=useState(null)
     
+    const data_p =  JSON.parse(localStorage.getItem('data_p'))
 
 
     const getData = async()=> {
@@ -91,7 +92,7 @@ const Charts2 = () => {
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Promedio de consumo diario</h3>
+                <h3 style={{color:'white'}}>Promedio de consumo diario (semanal)</h3>
                   {valueMax ? <>
                     <center><h4 style={{ color:'white'}}>{valueMax.value}(m3)</h4></center>                    
                   </>: <center><h4 style={{ color:'white'}}>CARGANDO DATOS...</h4></center>}
@@ -115,8 +116,12 @@ const Charts2 = () => {
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Cantidad de estanques llenados (últimas 24 horas)</h3>
-                 
+                <h3 style={{color:'white'}}>Promedio cantidad de estanques llenados (semanal)</h3>
+                <h4 style={{color:'white'}}>
+                  {valueMax ? <center> 
+                    {parseFloat(valueMax.value/data_p.d6).toFixed(1)} (Estanques)</center>: <center><h4 style={{color:'white'}}>CARGANDO DATOS...</h4></center>
+                  }
+                </h4>       
                 </CardBody>
               </CardHeader>
             </Card>
@@ -125,7 +130,7 @@ const Charts2 = () => {
             <Card className="card-chart">
               <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
                 <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Perdidas de facturación</h3>
+                <h3 style={{color:'white'}}>Perdidas de facturación (mensual)</h3>
                 <h4 style={{color:'white'}}>0000 m3</h4>                  
                 </CardBody>
               </CardHeader>

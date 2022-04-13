@@ -8,7 +8,7 @@ import {
   CardBody,
   CardTitle,
   Row,
-  Col
+  Col, Button, Input
 } from "reactstrap";
 
 import { Statistic } from 'antd';
@@ -109,6 +109,24 @@ const Dashboard = () => {
               </CardBody>              
             </Card>
           </Col>        
+        </Row>
+        <Row>
+          <Card className="card-stats">
+              <CardBody>
+                <Row>
+                  
+                  <Col xs="12">
+                    <div className="numbers">
+                    <center>
+                    <p className="card-category">INGRESA EL TOTAL FACTURADO DEL ÚLTIMO MES (metros cúbicos)</p>
+                      <input style={{borderColor:'#263148',borderRadius:'8px',padding:'10px',width:'200px', marginTop:'10px', marginBottom:'10px'}} placeholder='Rango: 0 - 20.000.000,00' />
+                    <Button style={{padding:'10px', marginLeft:'10px'}}>ACEPTAR</Button>
+                    </center>
+                    </div>
+                  </Col>
+                </Row>
+              </CardBody>              
+            </Card>
         </Row>
         
       </div>
