@@ -31,7 +31,7 @@ const MiPozo = () => {
   const [pond, setPond] = useState(0)
   const [acc, setAcc] = useState(0)
 
-  const data_estatic = JSON.parse(localStorage.getItem('data_p') || null)
+  const data_estatic = JSON.parse(localStorage.getItem('data_p'))
 
   useEffect(() => {
     const get = async() => {
