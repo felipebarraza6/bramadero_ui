@@ -38,7 +38,7 @@ function App(props) {
       localStorage.setItem("token_novus", 'a16508e6-8798-461a-8b07-729e03d8b1ef')
       localStorage.setItem("data_p", JSON.stringify({
         "d1": 170,
-        "d2": 78,
+          "d2": 71,
         "d3": 36,
         "d4": 8,
         "d5":8,
