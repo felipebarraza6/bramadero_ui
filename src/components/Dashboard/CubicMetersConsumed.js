@@ -44,7 +44,7 @@ const CubicMetersConsumed = () => {
               })                            
                 // eslint-disable-next-line no-loop-func
                 setData(data => {     
-                  data_d.push(parseFloat(results[0].value / 10).toFixed(2))
+                  data_d.push(parseFloat(results[0].value ).toFixed(2))
                 })               
               }                                            
             }                      

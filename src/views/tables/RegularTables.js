@@ -22,15 +22,15 @@ const RegularTables = () => {
                 <SortingTable
                   thead={[
                     { text: "Nombre" },
-                    { text: "Cargo" },
+                    { text: "Email" },
                     { text: "Telefono" },
                   ]}
                   tbody={[
                     {
                       data: [
-                        { text: "Carlos Díaz" },
-                        { text: "Presidente" },
-                        { text: "+56 9 9421 9533" },
+                        { text: "Constanza Hidd" },
+                        { text: "constanza.hidd@iansa.cl" },
+                        { text: "+56 9 9886 2975" },
                       ],
                      },
                                                           

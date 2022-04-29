@@ -34,14 +34,14 @@ function App(props) {
         }
       })
     }
-    if(!token_novus){
-      localStorage.setItem("token_novus", '9d1162a7-7088-4dc8-9b19-d666acc051b1')
+    if(token_novus){
+      localStorage.setItem("token_novus", 'a16508e6-8798-461a-8b07-729e03d8b1ef')
       localStorage.setItem("data_p", JSON.stringify({
-        "d1": 50,
-        "d2": 33,
+        "d1": 170,
+        "d2": 78,
         "d3": 36,
-        "d4": 4,
-        "d5":4,
+        "d4": 8,
+        "d5":8,
         "d6": 40
       }))
     }

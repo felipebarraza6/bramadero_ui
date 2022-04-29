@@ -2,6 +2,9 @@
 import React, { useEffect, useState} from "react";
 import { Card, CardHeader, CardTitle, Row, Col, CardBody } from "reactstrap";
 import api_novus from '../api_novus/endpoints'
+import icono1 from '../assets/img/icono-20.png'
+import icono2 from '../assets/img/icono-21.png'
+import icono3 from '../assets/img/Icono-30.png'
 
 
 const Charts2 = () => {
@@ -84,78 +87,98 @@ const Charts2 = () => {
   return (
     <>
       <div className="content" style={{marginTop:'0px'}}>
-        <h2 className="text-center" style={{color: 'gray'}} >ANÁLISIS DE DATOS</h2>      
         <div style={{marginBottom:'0px'}}>        
         </div>
+        <Row className="mt-5">
+        <h2 style={{color: 'gray', marginLeft:'31%'}} >ANÁLISIS DE DATOS</h2>      
+        </Row>
         <Row className="mt-5" >
           <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Promedio de consumo diario (semanal)</h3>
-                  {valueMax ? <>
-                    <center><h4 style={{ color:'white'}}>{valueMax.value}(m3)</h4></center>                    
-                  </>: <center><h4 style={{ color:'white'}}>CARGANDO DATOS...</h4></center>}
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
+              <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono1} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Promedio de consumo diario</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                  {valueMax ? 
+                    <Col>
+                    <div>
+                      <h4>{valueMax.value}(m3)</h4>
+                    </div>
+                    </Col>
+                    : <Col><h4>CARGANDO DATOS...</h4></Col>}
+              </Row>
                 </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
+              
+              
               </CardHeader>
+
             </Card>
           </Col>          
+          
           <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Bomba pozo profundo</h3>
-                <h4 style={{color:'white'}}>Mantenimiento: X días / Cambio: X días</h4>                
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
+              <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono2} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Bomba pozo profundo</h4>
+                  </Col>
+                </Row>
+            
+                <Row>
+                  <Col></Col>
+                  <Col>
+                  <h4>Mantenimiento: x días</h4>
+                  </Col>
+                </Row>
                 </CardBody>
+                <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
+
               </CardHeader>
             </Card>
-          </Col>    
-          </Row>
-          <Row className="mt-5" >
+          </Col>
           <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Promedio cantidad de estanques llenados (semanal)</h3>
-                <h4 style={{color:'white'}}>
-                  {valueMax ? <center> 
-                    {parseFloat(valueMax.value/data_p.d6).toFixed(1)} (Estanques)</center>: <center><h4 style={{color:'white'}}>CARGANDO DATOS...</h4></center>
-                  }
-                </h4>       
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(184,184,184,1) 100%)'}}>
+              <CardHeader style={{border:'1px solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono3} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4 style={{color:'grey'}}>Recuperación de pozo</h4>
+                  </Col>
+                </Row><Row>
+                  <Col></Col>
+                  <Col>
+                  <h4 style={{color:'grey'}}>0000 seg</h4>
+                  </Col>
+                  </Row>
                 </CardBody>
+                <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'grey', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
               </CardHeader>
             </Card>
-          </Col>    
-          <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Perdidas de facturación (mensual)</h3>
-                <h4 style={{color:'white'}}>0000 m3</h4>                  
-                </CardBody>
-              </CardHeader>
-            </Card>
-          </Col>    
-          <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Recuperación de pozo</h3>
-                <h4 style={{color:'white'}}>0000 seg</h4>
-                </CardBody>
-              </CardHeader>
-            </Card>
-          </Col>    
-          <Col className="ml-center" md="5">
-            <Card className="card-chart">
-              <CardHeader style={{backgroundColor:'#0050b3', color:'white'}}>                                
-                <CardBody style={{margin:'30px', color:'white'}}>                               
-                <h3 style={{color:'white'}}>Factibididad de nuevos arranques</h3>
-                <h4 style={{color:'white'}}>#### casas</h4> 
-                </CardBody>
-              </CardHeader>
-            </Card>
-          </Col>                              
+          </Col>
+             
+                                       
         </Row>        
       </div>
     </>

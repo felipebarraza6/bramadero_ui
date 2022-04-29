@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/dashboard",
-    name: "DASHBOARD",
+    name: "INICIO",
     icon: "tim-icons icon-components",
     component: Dashboard,
     layout: "/admin",

@@ -111,11 +111,11 @@ const Dashboard = () => {
           </Col>        
         </Row>
         <Row>
-          <Card className="card-stats">
+    {/*<Card className="card-stats">
               <CardBody>
                 <Row>
                   
-                  <Col xs="12">
+    <Col xs="12">
                     <div className="numbers">
                     <center>
                     <p className="card-category">INGRESA EL TOTAL FACTURADO DEL ÚLTIMO MES (metros cúbicos)</p>
@@ -123,10 +123,10 @@ const Dashboard = () => {
                     <Button style={{padding:'10px', marginLeft:'10px'}}>ACEPTAR</Button>
                     </center>
                     </div>
-                  </Col>
+                  </Col> 
                 </Row>
               </CardBody>              
-            </Card>
+            </Card>*/}
         </Row>
         
       </div>
