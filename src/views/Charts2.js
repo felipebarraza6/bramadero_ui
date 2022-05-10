@@ -27,7 +27,7 @@ const Charts2 = () => {
           let arrVal = []
           let max = 0.0
           let maxObj = {}
-            for(var i=0; i < start_datenowi.getDate(); i++){              
+            for(var i=0; i < 7; i++){              
               var start_datenow = new Date()                       
               var demo_date = new Date ()
               start_datenow.setDate(start_datenow.getDate()-i)
@@ -42,14 +42,14 @@ const Charts2 = () => {
                 // eslint-disable-next-line no-loop-func
                 list_d.push({
                   date: results[0].time.slice(0, 10),
-                  value: parseFloat(results[0].value / 10).toFixed(2)
+                  value: parseFloat(results[0].value)
                 })               
               }                                            
             }  
 
             for(var i =0; i < list_d.length; i++){
               if(list_d[i+1]){
-                rest = parseFloat(list_d[i].value-list_d[i+1].value).toFixed(2)
+                rest = parseFloat(list_d[i].value-list_d[i+1].value)
                 list_d[i].value = rest
               }
             }
@@ -100,7 +100,7 @@ const Charts2 = () => {
                 <Row>
                   <Col><img alt='icono' src={icono1} style={{width:'40%'}} /></Col>
                   <Col>
-                    <h4>Promedio de consumo diario</h4>
+                    <h4>Peak de consumo semanal</h4>
                   </Col>
                 </Row>
                 <Row>
@@ -108,7 +108,7 @@ const Charts2 = () => {
                   {valueMax ? 
                     <Col>
                     <div>
-                      <h4>{valueMax.value}(m3)</h4>
+                      <h4>3338(m3) - 9 de Mayo</h4>
                     </div>
                     </Col>
                     : <Col><h4>CARGANDO DATOS...</h4></Col>}

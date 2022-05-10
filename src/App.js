@@ -39,7 +39,7 @@ function App(props) {
       localStorage.setItem("data_p", JSON.stringify({
         "d1": 170,
           "d2": 71,
-        "d3": 36,
+        "d3": 76,
         "d4": 8,
         "d5":8,
         "d6": 40

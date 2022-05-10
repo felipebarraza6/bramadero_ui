@@ -38,8 +38,8 @@ const Footer = (props) => {
         <div className="copyright">
           © {new Date().getFullYear()} Desarrollado con {" "}
           <i className="tim-icons icon-heart-2" /> por{" "}
-          <a href="https://www.qualitynet.cl/" target="_blank">
-            Quality Net
+          <a href="https://www.smarthydro.cl/" target="_blank">
+            Smart Hydro / Departamento IOT
           </a>{" "}          
         </div>
       </Container>

@@ -719,7 +719,7 @@ const chartExample8 = {
           },
           ticks: {
             suggestedMin: 0,
-            suggestedMax: 50,
+            suggestedMax: 170,
             padding: 0,
             fontSize:14,
             fontColor: "#0050b3",
