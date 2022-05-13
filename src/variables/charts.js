@@ -1,3 +1,9 @@
+const user = JSON.parse(localStorage.getItem('user') || null)
+var d1_chart = 100
+
+if(user){
+  d1_chart = user.profile_data.d1
+}
 
 
 let chart_mode = {
@@ -719,7 +725,7 @@ const chartExample8 = {
           },
           ticks: {
             suggestedMin: 0,
-            suggestedMax: 170,
+            suggestedMax: d1_chart,
             padding: 0,
             fontSize:14,
             fontColor: "#0050b3",

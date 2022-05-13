@@ -26,6 +26,8 @@ const Charts = () => {
   const [labels3, setLabels3] = useState([])
   const [data3, setData3] = useState([])
 
+  const user = JSON.parse(localStorage.getItem('user'))
+
 
   const getDataFl = async()=> {
     
@@ -50,21 +52,21 @@ const Charts = () => {
               // eslint-disable-next-line no-loop-func
               proto.push({
                   date:results[0].time.slice(0, 10),
-                  value: parseFloat(results[0].value ).toFixed(2)
+                  value: parseFloat(results[0].value ).toFixed(0)
               })
 
               labels.push(results[0].time.slice(0, 10))
 
               // eslint-disable-next-line no-loop-func
               
-              list_d.push(parseFloat(results[0].value).toFixed(2))                         
+              list_d.push(parseFloat(results[0].value).toFixed(0))                         
              
             }               
           }  
           for(var i =0; i < list_d.length; i++){
               var proc = list_d[i]-list_d[i+1]
               if(!isNaN(proc)){
-                rest.push(proc) 
+                rest.push(parseFloat(proc/user.profile_data.scale).toFixed(1)) 
               }              
           }  
           setData1(rest)
@@ -113,7 +115,7 @@ const getDataNl = async()=> {
               } else if(results[0].value == 36.6){
                 list_d.push(33.4)
               } else {
-                list_d.push(parseFloat(results[0].value))                         
+                list_d.push(parseFloat(results[0].value/user.profile_data.scale).toFixed(1))                         
               } 
              
             }               
@@ -151,21 +153,21 @@ const getDataNl = async()=> {
               // eslint-disable-next-line no-loop-func
               proto.push({
                   date:results[0].time.slice(0, 10),
-                  value: parseFloat(results[0].value ).toFixed(2)
+                  value: parseFloat(results[0].value ).toFixed(1)
               })
 
               labels.push(results[0].time.slice(0, 10))
 
               // eslint-disable-next-line no-loop-func
               
-              list_d.push(parseFloat(results[0].value ).toFixed(2))                         
+              list_d.push(parseFloat(results[0].value).toFixed(1))                         
              
             }               
           }  
           for(var i =0; i < list_d.length; i++){
               var proc = list_d[i]-list_d[i+1]
               if(!isNaN(proc)){
-                rest.push(proc) 
+                rest.push(proc/user.profile_data.scale) 
               }              
           }  
           setData2(rest)
@@ -188,11 +190,6 @@ const getDataNl = async()=> {
     <>
       <div className="content">
        
-      <Row style={{marginTop: '20px'}}>
-          <Col>
-            <h2 className="text-center" style={{color: "gray"}} >GRÁFICOS ACUMULADO</h2>      
-          </Col>
-      </Row>
      
       <Row style={{marginTop:'100px'}}>
       <Col className="text-left" sm="6">
@@ -253,7 +250,11 @@ const getDataNl = async()=> {
               </td>
 
         <td style={styles.table.tdth}>
-        <b>{data1.reduce((a,b)=>(parseFloat(a)+parseFloat(b)),0)}</b>
+        <b>{data1.reduce((a,b)=> {
+          var sum = parseFloat(a)+parseFloat(b)
+          return(sum.toFixed(1))
+
+        },0)}</b>
         </td>
         </tr>
 
@@ -380,17 +381,6 @@ const getDataNl = async()=> {
               {x}
               </td>
             )}</tr>
-        <hr />
-        <tr>
-        <td style={styles.table.tdtha} >
-          TOTAL
-              </td>
-
-        <td style={styles.table.tdth}>
-        <b>{data3.reduce((a,b)=>(parseFloat(a)+parseFloat(b)),0)}</b>
-        </td>
-        </tr>
-
         </table>
         </Col>
       </Row>

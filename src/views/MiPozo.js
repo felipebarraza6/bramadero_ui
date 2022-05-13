@@ -14,6 +14,7 @@ import {
 import { Bar, Line } from "react-chartjs-2"
 
 import SortingTable from "../components/SortingTable/SortingTable.js"
+import Pozo from '../assets/pozo/dem1.png'
 
 import {
     chartExample5,
@@ -65,55 +66,13 @@ const MiPozo = () => {
                   </Row>
                 </CardHeader>
                 <CardBody>                         
-                <Row>
-                <Col  lg="1" style={{marginLeft:'220px'}}>
-                    <hr style={styles.hrV} />                    
-                  </Col>
-                  <Col  lg="2" style={{marginLeft:'0px'}}>                    
-                    <hr style={styles.line} />                    
-                  </Col>
-                  <Col  lg="2" style={{marginLeft:'10px'}}> 
-                  
-                    <div style={{marginTop:'-6px'}}>
-                    CAUDAL: {well} (Lt/S)
-                    </div>
-                  
-                  </Col>
-                  <Col  lg="1" style={{marginLeft:'0px'}}>                    
-                    <hr style={styles.line2} />                    
-                  </Col>
-                  <Col lg="3">
-                      <div style={{border:'2px solid gray', marginTop:'-50px',marginLeft:'-30px', padding:'10px',width:'200px'}}>
-                          <span style={{color:'gray'}}>Acumulador: {acc} (m3)</span>
-                          <img style={{marginTop: '0px'}} width={300}  src='https://smarthydro.cl/wp/wp-content/uploads/2021/01/logo-sin-tagline_Mesa-de-trabajo-1.png' />
-                      </div>
-                  </Col>
-                  </Row>            
-                    <Row style={{marginBottom: '100px', marginTop:'-300px'}}>
-                      <Col lg="4" style={{paddingTop:'00px',marginLeft:'60px', background: 'repeating-linear-gradient(55deg, rgba(0, 0, 0, 0) 35px, rgba(0, 0, 0, 0) 50px, #d9d9d9 50px,#d9d9d9 60px'}}>                          
-                          <Bar
-                          data={{
-                            labels: ["NIVEL FREATICO"],
-                            datasets: [
-                              {
-                                label: "Metros",
-                                fill: false,
-                                backgroundColor: "#3C91E6",
-                                hoverBackgroundColor: " #3C91E6",
-                                borderColor: "#3C91E6",
-                                borderWidth: 0,
-                                borderDash: [0],
-                                borderDashOffset: 0.0,
-                                data: [pond+(data_estatic.d1-data_estatic.d2)],
-                              }     
-                            ],
-                          }}
-                          options={chartExample8.options}
-                          style={{backgroundColor: 'gray'}}
-                          height={'350px'}
-                          />                          
-                      </Col>         
-                      <Col lg="4" style={{color:'gray', marginLeft: '150px', marginTop:'100px'}}>
+                    <Row >
+                      <Col style={{marginTop:'-200px'}} xs='8' >
+
+                        <img src={Pozo} style={{width:'120%'}} />
+                      </Col>
+
+                      <Col style={{color:'gray'}}>
                       <table style={styles.table}>
                           <tr >
                             <th style={styles.table.tdth}>Profundidad de pozo</th>
@@ -138,11 +97,16 @@ const MiPozo = () => {
                          
                         </table>
                       </Col>
-                      
+         
+                                            
                     </Row>         
                 </CardBody>
               </Card>
+
             </Col>           
+          </Row>
+          <Row>
+                      
           </Row>
           
         </div>
@@ -150,6 +114,7 @@ const MiPozo = () => {
 }
 
 const styles = {
+
   line: {
     color: 'white',
     backgroundColor: '#5e72e4',

@@ -12,6 +12,7 @@ export const Axios = axios.create({
     }
 })
 
+
 export const GET = async (endpoint) =>{
     const request = await Axios.get(endpoint)
     return request

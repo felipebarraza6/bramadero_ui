@@ -22,6 +22,7 @@ const CubicMetersConsumed = () => {
 
     const [labels, setLabels] = useState([])
     const [data, setData] = useState([])
+  const user = JSON.parse(localStorage.getItem('user'))
    
     const getData = async()=> {
       var data_l = []
@@ -44,7 +45,7 @@ const CubicMetersConsumed = () => {
               })                            
                 // eslint-disable-next-line no-loop-func
                 setData(data => {     
-                  data_d.push(parseFloat(results[0].value ).toFixed(2))
+                  data_d.push(parseFloat(results[0].value/user.profile_data.scale ).toFixed(2))
                 })               
               }                                            
             }                      

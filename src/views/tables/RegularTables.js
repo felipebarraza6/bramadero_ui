@@ -4,16 +4,16 @@ import SortingTable from "../../components/SortingTable/SortingTable.js"
 
 
 const RegularTables = () => {
+  
+  const user = JSON.parse(localStorage.getItem('user') || null)
+  const persons = user.profile_data.persons
+  console.log(persons)
+
   return (
     <>
            
-      <div className="content" style={{marginBottom:'30px'}}>
-      <h2 className="text-center" 
-        style={{
-          color: 'gray', 
-          marginBottom:'80px', 
-          paddingTop:'40'}}> Reportes</h2>  
-        <Row>
+      <div className="content" style={{marginBottom: window.innerWidth > 800 ? '30px': '0px'}}>
+        <Row style={{margin: window.innerWidth > 800 ?'100px':'0px', marginRight: window.innerWidth > 800 ? '200px': '0px'}}>
           <Col className="mb-5" md="12">
             <Card>
               <Table responsive>
@@ -26,43 +26,13 @@ const RegularTables = () => {
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td className="text-center">1</td>
-            <td>Constanza Hidd Cutiño</td>
-            <td>constanza.hidd@iansa.cl	</td>
-            <td className="text-center">+56 9 9886 2975</td>
-        </tr>
-        <tr>
-            <td className="text-center">2</td>
-            <td>Hugo Torres Chavez</td>
-            <td>htorrres@iansa.cl</td>
-            <td className="text-center"></td>
-            
-        </tr>
-        <tr>
-            <td className="text-center">3</td>
-            <td>Luis Nuñez Bustamante</td>
-            <td>lnunez@iansa.cl</td>
-            <td className="text-center"></td>
-        </tr>
-        <tr>
-            <td className="text-center">4</td>
-            <td>Ricardo Barahona Angel</td>
-            <td>ricardo.barahona@iansa.cl</td>
-            <td className="text-center"></td>
-        </tr>
-        <tr>
-            <td className="text-center">5</td>
-            <td>Hugo Pereira Cespedes</td>
-            <td>hpereir@iansa.cl</td>
-            <td className="text-center"></td>
-        </tr>
-        <tr>
-            <td className="text-center">6</td>
-            <td>Leonardo Marquez Espinoza</td>
-            <td>lrrmarque@iansa.cl</td>
-            <td className="text-center"></td>
-        </tr>
+        {persons.map((x)=> <tr key={x.id}>
+              <td className="text-center">{x.id}</td>
+              <td>{x.name}</td>
+              <td>{x.email}</td>
+              <td className="text-center">{x.phone}</td>
+          </tr>)}
+        
 
 
     </tbody>

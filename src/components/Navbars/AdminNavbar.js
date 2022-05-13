@@ -49,6 +49,7 @@ const AdminNavbar = (props) => {
     setCollapseOpen(!collapseOpen);
   };
   // this function is to open the Search modal
+  const user = JSON.parse(localStorage.getItem('user') || null)
 
   return (
     <>
@@ -119,8 +120,7 @@ const AdminNavbar = (props) => {
               <UncontrolledDropdown nav style={{marginTop:'10px'}}>
                   <div>
                     <Button>
-                      {userContext.email} 
-                    </Button>
+                      {userContext.email}                     </Button>
                   </div>
               </UncontrolledDropdown>
               <UncontrolledDropdown nav style={{marginTop:'10px'}}>

@@ -19,32 +19,24 @@ function App(props) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    document.body.classList.toggle("white-content");
+
+    document.body.classList.toggle('white-content')
 
     const access_token = JSON.parse(localStorage.getItem('access_token') || null)
     const user = JSON.parse(localStorage.getItem('user') || null)
     const token_novus = localStorage.getItem('token_novus')
-
+    console.log(user)
     if(user && access_token){
       dispatch({
-        type: 'LOGIN',
+        type: 'LOGIN_A',
         payload: {
           access_token,
           user,
         }
       })
     }
-    if(token_novus){
-      localStorage.setItem("token_novus", 'a16508e6-8798-461a-8b07-729e03d8b1ef')
-      localStorage.setItem("data_p", JSON.stringify({
-        "d1": 170,
-          "d2": 71,
-        "d3": 76,
-        "d4": 8,
-        "d5":8,
-        "d6": 40
-      }))
-    }
+    
+
       }, [])
 
 

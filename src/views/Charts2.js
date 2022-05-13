@@ -2,10 +2,14 @@
 import React, { useEffect, useState} from "react";
 import { Card, CardHeader, CardTitle, Row, Col, CardBody } from "reactstrap";
 import api_novus from '../api_novus/endpoints'
+import api_crm from "../api_crm/endpoints";
 import icono1 from '../assets/img/icono-20.png'
-import icono2 from '../assets/img/icono-21.png'
+import icono2 from '../assets/img/icono-27.png'
 import icono3 from '../assets/img/Icono-30.png'
+import icono6 from '../assets/img/Icono-22.png'
 
+import icono4 from '../assets/img/Icono-28.png'
+import icono5 from '../assets/img/Icono-23.png'
 
 const Charts2 = () => {
 
@@ -14,13 +18,24 @@ const Charts2 = () => {
     const [values, setValues]= useState([])
     const [viewstr, setViewStr]=useState('')
     const [valueMax, setValueMax]=useState(null)
+    const [statElement, setStatElement] = useState(null)
     
     const data_p =  JSON.parse(localStorage.getItem('data_p'))
+    const user = JSON.parse(localStorage.getItem('user'))
+    console.log(statElement)
+    
+    const stat1 = user.profile_data.in1
+    const stat2 = user.profile_data.in2
+    const stat3 = user.profile_data.in3
+    const stat4 = user.profile_data.in4
+    const stat5 = user.profile_data.in5
+    const stat6 = user.profile_data.in6
 
 
     const getData = async()=> {
       var data_v = []
       var start_datenowi = new Date()
+        var rquest2 = await api_crm.billing_data(user.profile_data.id).then((r)=> setStatElement(r.results[0]))
         try {            
           let list_d = []
           let rest = []
@@ -89,18 +104,16 @@ const Charts2 = () => {
       <div className="content" style={{marginTop:'0px'}}>
         <div style={{marginBottom:'0px'}}>        
         </div>
-        <Row className="mt-5">
-        <h2 style={{color: 'gray', marginLeft:'31%'}} >ANÁLISIS DE DATOS</h2>      
-        </Row>
         <Row className="mt-5" >
+          {stat1 && 
           <Col className="ml-center" md="5">
             <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
               <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
                 <CardBody style={{margin:'10px'}}>                               
                 <Row>
-                  <Col><img alt='icono' src={icono1} style={{width:'40%'}} /></Col>
+                  <Col><img alt='icono' src={icono6} style={{width:'40%'}} /></Col>
                   <Col>
-                    <h4>Peak de consumo semanal</h4>
+                    <h4>Promedio de consumo diario</h4>
                   </Col>
                 </Row>
                 <Row>
@@ -108,7 +121,7 @@ const Charts2 = () => {
                   {valueMax ? 
                     <Col>
                     <div>
-                      <h4>3338(m3) - 9 de Mayo</h4>
+                      <h4>{parseFloat(valueMax.value/user.profile_data.scale).toFixed(1)} (m3)</h4>
                     </div>
                     </Col>
                     : <Col><h4>CARGANDO DATOS...</h4></Col>}
@@ -124,29 +137,95 @@ const Charts2 = () => {
               </CardHeader>
 
             </Card>
-          </Col>          
-          
+          </Col>}          
+{stat2 && 
           <Col className="ml-center" md="5">
             <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
               <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
                 <CardBody style={{margin:'10px'}}>                               
                 <Row>
+                  <Col><img alt='icono' src={icono1} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Cantidad de estanques llenados</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                  {statElement ? 
+                    <Col>
+                    <div>
+                      <h4> {parseFloat((statElement.production/statElement.constant_a)/31+1).toFixed(1)}(m3)</h4>
+                    </div>
+                    </Col>
+                    : <Col><h4>CARGANDO DATOS...</h4></Col>}
+              </Row>
+                </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
+              
+              
+              </CardHeader>
+
+            </Card>
+          </Col>} 
+{stat3 && 
+          <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
+              <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono5} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Perdidas de facturación</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                  {statElement ? 
+                    <Col>
+                    <div>
+                      <h4>{statElement.production - statElement.billing} (m3)</h4>
+                    </div>
+                    </Col>
+                    : <Col><h4>CARGANDO DATOS...</h4></Col>}
+              </Row>
+                </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
+              
+              
+              </CardHeader>
+
+            </Card>
+          </Col>} 
+          
+          <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(184,184,184,1) 100%)'}} >
+              <CardHeader style={{border:'1px solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
                   <Col><img alt='icono' src={icono2} style={{width:'40%'}} /></Col>
                   <Col>
-                    <h4>Bomba pozo profundo</h4>
+                    <h4 style={{color:'grey'}}>Bomba pozo profundo</h4>
                   </Col>
                 </Row>
             
                 <Row>
                   <Col></Col>
                   <Col>
-                  <h4>Mantenimiento: x días</h4>
+                  <h4 style={{color:'grey'}}>Mantenimiento: x días</h4>
                   </Col>
                 </Row>
                 </CardBody>
                 <Row>
                 <Col style={{float:'right'}}>
-                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                  <div style={{float:'right',backgroundColor:'grey', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
                 </Col>
               </Row>
 
@@ -177,7 +256,31 @@ const Charts2 = () => {
               </CardHeader>
             </Card>
           </Col>
-             
+           <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(184,184,184,1) 100%)'}}>
+              <CardHeader style={{border:'1px solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono4} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4 style={{color:'grey'}}>Factibilidad Nuevos Arranques</h4>
+                  </Col>
+                </Row><Row>
+                  <Col></Col>
+                  <Col>
+                  <h4 style={{color:'grey'}}>0000</h4>
+                  </Col>
+                  </Row>
+                </CardBody>
+                <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'grey', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+                </Col>
+              </Row>
+              </CardHeader>
+            </Card>
+          </Col>
+  
                                        
         </Row>        
       </div>
