@@ -62,7 +62,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="content">
-        <Row style={{marginBottom:'20px'}}>
+    {/*<Row style={{marginBottom:'20px'}}>
           {listProfiles.map((x)=> {
             return(<Col xs={2}><Button onClick={()=> {
               localStorage.setItem("token_novus", x.token_service)
@@ -78,7 +78,7 @@ const Dashboard = () => {
             }} >{x.title}</Button></Col>)
           })}
 
-        </Row>
+        </Row>*/}
         <Row>
               
           <CubicMetersConsumed />          

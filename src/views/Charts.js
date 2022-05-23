@@ -114,7 +114,9 @@ const getDataNl = async()=> {
                 list_d.push(32.3)
               } else if(results[0].value == 36.6){
                 list_d.push(33.4)
-              } else {
+              } else if(results[0].value == 3276.7){
+                list_d.push(32.2) 
+              }else {
                 list_d.push(parseFloat(results[0].value/user.profile_data.scale).toFixed(1))                         
               } 
              
@@ -167,7 +169,7 @@ const getDataNl = async()=> {
           for(var i =0; i < list_d.length; i++){
               var proc = list_d[i]-list_d[i+1]
               if(!isNaN(proc)){
-                rest.push(proc/user.profile_data.scale) 
+                rest.push(proc/user.profile_data.scale).toFixed(1) 
               }              
           }  
           setData2(rest)

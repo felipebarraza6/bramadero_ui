@@ -23,6 +23,7 @@ const RegularTables = () => {
             <th>Nombre</th>
             <th>Email</th>
             <th className="text-center">Telefono</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@ const RegularTables = () => {
               <td>{x.name}</td>
               <td>{x.email}</td>
               <td className="text-center">{x.phone}</td>
+              <td><Button size="sm">SOLICITAR REPORTE(en desarrollo...)</Button></td>
           </tr>)}
         
 

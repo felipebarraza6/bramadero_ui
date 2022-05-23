@@ -22,7 +22,7 @@ const Charts2 = () => {
     
     const data_p =  JSON.parse(localStorage.getItem('data_p'))
     const user = JSON.parse(localStorage.getItem('user'))
-    console.log(statElement)
+    console.log(user)
     
     const stat1 = user.profile_data.in1
     const stat2 = user.profile_data.in2
@@ -104,6 +104,106 @@ const Charts2 = () => {
       <div className="content" style={{marginTop:'0px'}}>
         <div style={{marginBottom:'0px'}}>        
         </div>
+        {user.username == "pozos.iansa" ? <>
+          <Row className="mt-5" >
+          <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(228,237,247,1) 61%, rgba(216,229,244,1) 69%, rgba(210,225,242,1) 79%, rgba(197,216,238,1) 87%, rgba(150,183,224,1) 100%, rgba(0,80,179,1) 100%)'}}>
+              <CardHeader style={{border:'1px #3967AA solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono6} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Promedio de consumo diario</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                  {valueMax ? 
+                    <Col>
+                    <div>
+                      <h4>{parseFloat(valueMax.value/user.profile_data.scale).toFixed(1)} (m3)</h4>
+                    </div>
+                    </Col>
+                    : <Col><h4>CARGANDO DATOS...</h4></Col>}
+              </Row>
+                </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'#3967AA', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+               </Col>
+                
+              </Row>
+              
+              
+              </CardHeader>
+
+            </Card>
+          </Col>
+          <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(184,184,184,1) 100%)'}}>
+              <CardHeader style={{border:'1px grey solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono2} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Bomba pozo profundo</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                    <Col>
+                    <div>
+                      <h4>X días</h4>
+                    </div>
+                    </Col>
+              </Row>
+                </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'grey', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+               </Col>
+                
+              </Row>
+              
+              
+              </CardHeader>
+
+            </Card>
+          </Col>
+          <Col className="ml-center" md="5">
+            <Card className="card-chart" style={{background:'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(184,184,184,1) 100%)'}}>
+              <CardHeader style={{border:'1px grey solid', borderRadius:'7px'}}>                                
+                <CardBody style={{margin:'10px'}}>                               
+                <Row>
+                  <Col><img alt='icono' src={icono3} style={{width:'40%'}} /></Col>
+                  <Col>
+                    <h4>Recuperación de pozo</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col></Col>
+                    <Col>
+                    <div>
+                      <h4>0000 Seg</h4>
+                    </div>
+                    </Col>
+              </Row>
+                </CardBody>
+              <Row>
+                <Col style={{float:'right'}}>
+                  <div style={{float:'right',backgroundColor:'grey', width:'10px', height:'10px', borderRadius:'50%', margin:'5px'}}></div>
+               </Col>
+                
+              </Row>
+              
+              
+              </CardHeader>
+
+            </Card>
+          </Col>
+
+          </Row>
+          </>:
         <Row className="mt-5" >
           {stat1 && 
           <Col className="ml-center" md="5">
@@ -282,7 +382,7 @@ const Charts2 = () => {
           </Col>
   
                                        
-        </Row>        
+        </Row>}        
       </div>
     </>
   );
