@@ -113,18 +113,21 @@ const Charts2 = () => {
                 <Row>
                   <Col><img alt='icono' src={icono6} style={{width:'40%'}} /></Col>
                   <Col>
-                    <h4>Peak de flujo semanal</h4>
+                    <h4>Peak de consumo semanal</h4>
                   </Col>
                 </Row>
                 <Row>
                   <Col></Col>
-                  {valueMax ? 
+                  {valueMax ? <> 
                     <Col>
                     <div>
-                      <h5>2302.0 (m3) - 30 Mayo</h5>
+                      <h4>{parseFloat(valueMax.value/user.profile_data.scale).toFixed(1)} (m3)</h4>
                     </div>
                     </Col>
-                    : <Col><h4>CARGANDO DATOS...</h4></Col>}
+                    <Col>
+                      <h4>{valueMax.date}</h4>
+                    </Col>
+                    </>: <Col><h4>CARGANDO DATOS...</h4></Col>}
               </Row>
                 </CardBody>
               <Row>
