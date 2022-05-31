@@ -62,23 +62,46 @@ const Dashboard = () => {
   return (
     <>
       <div className="content">
-    {/*<Row style={{marginBottom:'20px'}}>
-          {listProfiles.map((x)=> {
-            return(<Col xs={2}><Button onClick={()=> {
-              localStorage.setItem("token_novus", x.token_service)
-              localStorage.setItem("data_p", JSON.stringify({
-                "d1": x.d1,
-                "d2": x.d2,
-                "d3": x.d3,
-                "d4": x.d4,
-                "d5": x.d5,
-                "d6": x.d6
-              }))
-
-            }} >{x.title}</Button></Col>)
-          })}
-
-        </Row>*/}
+    {<Row style={{marginBottom:'20px'}}>
+          {user.username === "pozos.iansa" ? 
+              <>
+                <Button>
+                  Pozo 4
+                </Button>
+                <Button>
+                  Pozo 1
+                </Button>
+                <Button>
+                  Pozo 2
+                </Button>
+                <Button>
+                  Pozo 3
+                </Button>
+                <Button>
+                  Pozo 5
+                </Button>
+                <Button>
+                  Pozo 6
+                </Button>
+                
+              </>
+              :
+              <>
+            {listProfiles.map((x)=> {
+              return(<Col xs={2}>
+                <Button onClick={()=> {
+                  localStorage.setItem("token_novus", x.token_service)
+                  localStorage.setItem("data_p", JSON.stringify({
+                    "d1": x.d1,
+                    "d2": x.d2,
+                    "d3": x.d3,
+                    "d4": x.d4,
+                    "d5": x.d5,
+                    "d6": x.d6
+                  }))}}>{x.title}</Button></Col>)
+                })}
+              </>}
+        </Row>}
         <Row>
               
           <CubicMetersConsumed />          
